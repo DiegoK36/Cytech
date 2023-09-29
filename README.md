@@ -1,4 +1,4 @@
-# 🔬 **Cytech: Crowdfunding para Tecnología en Medicina** 🔬
+# 🔬 **Cytech: Crowdfunding para Tecnología en Medicina**
 
 Bienvenido al repositorio oficial de Cytech, la plataforma líder en crowdfunding para proyectos innovadores en el ámbito de la tecnología médica. Aquí, conectamos a inventores, científicos y profesionales de la salud con patrocinadores apasionados que buscan impulsar el futuro de la medicina.
 
