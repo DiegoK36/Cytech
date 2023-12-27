@@ -1,0 +1,30 @@
+/* MissionVisionValues.css */
+.mission-vision-values-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 10px;
+    margin: 70px 0;
+  }
+  
+  .mission, .vision, .values {
+    flex-basis: 30%;
+    text-align: center;
+  }
+  
+  .mission h3, .vision h3, .values h3 {
+    color: #ff6a00; /* Un color que destaque */
+    margin-bottom: 10px;
+  }
+  
+  .values ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .values li {
+    margin-bottom: 5px;
+  }
+  

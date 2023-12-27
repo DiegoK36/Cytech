@@ -1,0 +1,99 @@
+/* Estilos generales */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilos para el contenido principal */
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    min-height: 180vh;
+}
+
+.main-content {
+    padding-top: 70px;
+}
+
+/* Sección principal */
+main section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Títulos y párrafos */
+h1 {
+    color: #333333;
+}
+
+p {
+    color: #666;
+}
+
+/* Botones y enlaces */
+button,
+.button {
+    background-color: #4169e1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover,
+.button:hover {
+    background-color: #0056b3;
+}
+
+.hero {
+    margin-top: 80px;
+    text-align: center;
+    padding: 2rem;
+    transition: transform 0.2s ease-out;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline;
+}
+
+.hero p {
+    margin-bottom: 2rem;
+}
+
+.hero-buttons button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #4169e1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-buttons button:hover {
+    background-color: #5078ff;
+}
+
+.cursor {
+    display: inline-block;
+    width: 0px;
+    height: auto;
+    margin-left: 1px;
+    background-color: currentColor;
+    animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}

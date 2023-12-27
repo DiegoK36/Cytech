@@ -1,0 +1,63 @@
+/* Footer.css */
+.footer {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter-description {
+    text-align: left;
+}
+
+.newsletter-subscribe {
+    display: flex;
+}
+
+.newsletter-subscribe input[type="email"] {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.newsletter-subscribe button {
+    padding: 0.5rem 1rem;
+    background-color: #4169e1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter-subscribe button:hover {
+    background-color: #5078ff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: #3333336d;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+}
+
+hr {
+    margin-top: 1rem;
+    border: 0;
+    height: 0.7px;
+    background-color: #cccccc9f;
+    margin-bottom: 1rem;
+}

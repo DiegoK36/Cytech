@@ -1,0 +1,96 @@
+/* Estilos para Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 0.5rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 50px;
+    margin-right: 5px;
+}
+
+.navbar-title {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Enlaces del Navbar */
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.navbar-links a {
+    color: #333;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.navbar-links a svg {
+    margin-right: 6px;
+    color: #333333cd;
+    font-size: 0.8rem;
+}
+
+.navbar-links a:hover {
+    color: #007bff;
+}
+
+/* Botones de inicio de sesión y registro */
+.navbar-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+}
+
+.btn-dark {
+    background-color: #4169e1;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background-color: #5078ff;
+}
+
+/* Evita que el contenido principal no se superponga con el Navbar */
+body {
+    padding-top: 70px;
+}
