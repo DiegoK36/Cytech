@@ -3,8 +3,15 @@ import '../css/Navbar.css';
 import logo from '../assets/Logo_Cytech.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faProjectDiagram, faThList, faUsers, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
+
+    let navigate = useNavigate();
+
+    const handleRegisterClick = () => {
+      navigate('/registro');
+    };
 
     const [scrolled, setScrolled] = useState(false);
 
@@ -36,7 +43,6 @@ function Navbar() {
                 <span className="navbar-title">Cytech</span>
             </div>
 
-            {/* Los enlaces centrados */}
             <div className="navbar-links">
                 <a href="/home"><FontAwesomeIcon icon={faHome} /> Inicio</a>
                 <a href="/projects"><FontAwesomeIcon icon={faProjectDiagram} /> Proyectos</a>
@@ -48,7 +54,7 @@ function Navbar() {
             {/* Botones de inicio de sesión y registro a la derecha */}
             <div className="navbar-buttons">
                 <button className="btn btn-light">Iniciar Sesión</button>
-                <button className="btn btn-dark">Registrarse</button>
+                <button className="btn btn-dark" onClick={handleRegisterClick}>Registrarse</button>
             </div>
         </nav>
     );

@@ -13,7 +13,7 @@ function Footer() {
                 </div>
                 <div className="newsletter-subscribe">
                     <input type="email" placeholder="Introduce tu Email" aria-label="Email para Contactarte" />
-                    <button type="submit">¡Envíamelo!</button>
+                    <button type="submit">Suscribirme</button>
                 </div>
             </div>
             <hr />

@@ -79,6 +79,7 @@ const Inicio = () => {
             <Navbar />
             <div className="home-container">
                 <main className="main-content">
+                <div className="hero-container">
                     <section className="hero" style={{ transform: getTransformValue() }}>
                         <TypingEffect staticText={staticText} dynamicWords={words} colors={colors} speed={150} />
                         <p>Descubre y financia los proyectos más innovadores en el ámbito de la tecnología y la medicina.</p>
@@ -87,10 +88,11 @@ const Inicio = () => {
                             <button>Comenzar un Proyecto</button>
                         </div>
                     </section>
+                    </div>
                     <Carrusel items={items} />
                     <CTA />
-                    <Mision />
                     <PorqueElegirnos />
+                    <Mision />
                 </main>
                 <Footer />
             </div>
