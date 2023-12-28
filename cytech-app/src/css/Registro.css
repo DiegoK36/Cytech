@@ -1,44 +1,111 @@
-/* Register.css */
 .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  background-color: #ffffff05;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(25px);
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.register-form h2 {
+  text-align: center;
+  color: #333;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-row .input-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-row .input-group:last-child {
+  margin-right: 0;
+}
+
+.input-group {
+  margin-bottom: 15px;
   
-  .register-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Ajusta según tus necesidades */
-  }
-  
-  .register-form h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .register-form input {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .register-form button {
-    background-color: #4169e1;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .register-form button:hover {
-    background-color: #5078ff;
-  }
-  
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group select {
+  width: 100%; /* Ajusta el ancho teniendo en cuenta el margen */
+  padding: 10px;
+  margin-right: 20px; /* Margen a la derecha */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+}
+
+
+.register-form input {
+  width: calc(100% - 20px);
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #4169e1; /* Color del ícono */
+}
+
+/* Ajuste para el input dentro del contenedor de contraseña */
+.password-container input {
+  width: calc(100% - 40px); /* Reduce el ancho para acomodar el ícono */
+  padding-right: 30px; /* Espacio para el ícono */
+}
+
+.register-form button {
+  background-color: #4169e1;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.register-form button:hover {
+  background-color: #5078ff;
+}
+
+.register-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #f0f0f0; /* o el color de fondo que prefieras */
+}
+
