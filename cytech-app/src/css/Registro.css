@@ -19,6 +19,39 @@
   max-width: 500px;
 }
 
+.error-container {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px; /* Ajuste el margen derecho */
+  background-color: rgba(255, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  z-index: 1000;
+  opacity: 0;
+}
+
+.error-container.visible {
+  display: block;
+  animation: fadeInOut 10s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+}
+
+.error-message {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
 .register-form h2 {
   text-align: center;
   color: #333;
@@ -40,24 +73,79 @@
 
 .input-group {
   margin-bottom: 15px;
-  
+
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .input-group select {
-  width: 100%; /* Ajusta el ancho teniendo en cuenta el margen */
+  height: auto;
+  overflow-y: auto;
+  font-family: inherit;
+  width: 100%;
   padding: 10px;
-  margin-right: 20px; /* Margen a la derecha */
+  margin-right: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: white;
-  color: black;
+  color: #6b6b6b;
 }
 
+.input-inline {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-inline input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-inline input:last-child {
+  margin-right: 0;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link-a {
+  color: #4169e1;
+  text-decoration: none;
+}
+
+.login-link-a:hover {
+  text-decoration: underline;
+  color: #5078ff;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.checkbox-row input[type="checkbox"] {
+  margin-right: 230px;
+  margin-top: 0px;
+}
+
+.checkbox-row label {
+  margin: 0;
+  white-space: nowrap;
+  position: relative;
+  left: -218px;
+  margin-bottom: 10px;
+}
+
+.checkbox-row .required {
+  color: red;
+}
 
 .register-form input {
   width: calc(100% - 20px);
@@ -66,6 +154,18 @@
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+
+.input-group label .required {
+  color: red;
+}
+
+h2 .title {
+  color: #4169e1;
+}
+
+.input-group label .title {
+  color: #4169e1;
 }
 
 .password-container {
@@ -78,13 +178,13 @@
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #4169e1; /* Color del ícono */
+  color: #4169e1;
 }
 
 /* Ajuste para el input dentro del contenedor de contraseña */
 .password-container input {
-  width: calc(100% - 40px); /* Reduce el ancho para acomodar el ícono */
-  padding-right: 30px; /* Espacio para el ícono */
+  width: calc(100% - 40px);
+  padding-right: 30px;
 }
 
 .register-form button {
@@ -106,6 +206,31 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: #f0f0f0; /* o el color de fondo que prefieras */
+  background-image: radial-gradient(ellipse at bottom, #1D0559 0%, #020112 50%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
+.input-group input[type="date"] {
+  color: #6b6b6b;
+  font-family: inherit;
+  
+  ::-webkit-datetime-edit-text {
+    color: #6b6b6b;
+  }
+  ::-webkit-datetime-edit-month-field {
+    color: #6b6b6b;
+  }
+  ::-webkit-datetime-edit-day-field {
+    color: #6b6b6b;
+  }
+  ::-webkit-datetime-edit-year-field {
+    color: #6b6b6b;
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(35%) sepia(92%) saturate(1500%) hue-rotate(207deg) brightness(90%) contrast(88%);
+  }
+}
