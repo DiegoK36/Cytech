@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3001
 
 # Define el comando para ejecutar la aplicación
-CMD ["node", "src/app.js"]
+CMD ["npm", "run", "dev"]

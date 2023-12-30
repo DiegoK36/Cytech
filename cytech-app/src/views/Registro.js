@@ -24,12 +24,13 @@ const Registro = () => {
     fechaNacimiento: '',
     email: '',
     telefono: '',
+    usuario: '',
     contraseña: '',
     provincia: '',
     codigoPostal: '',
     terminos: false,
   });
-  
+
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -46,25 +47,28 @@ const Registro = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch('http://localhost:3000/api/registro', {
+        const response = await fetch('http://localhost:3001/api/registro', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(formData)
         });
-  
+
         if (response.ok) {
           const result = await response.json();
           console.log(result); // Manejar la respuesta exitosa
-          // Aquí podrías, por ejemplo, redirigir al usuario a otra página o mostrar un mensaje de éxito
+          // Redirigir al usuario o mostrar un mensaje de éxito
         } else {
-          console.error('Error en la respuesta del servidor');
-          // Manejar una respuesta de error del servidor
+          const errorText = await response.text();
+          console.error('Error en la respuesta del servidor:', errorText);
+          // Actualizar el estado de errores con el mensaje del servidor
+          setErrors({ general: errorText });
+          setShowErrors(true);
         }
       } catch (error) {
-        console.error('Error al conectarse con el servidor', error);
-        // Manejar errores de conexión
+        console.error('Error al conectarse con el servidor:', error);
+        // Mostrar un mensaje de error o manejar el error
       }
     } else {
       setShowErrors(true);
@@ -97,7 +101,13 @@ const Registro = () => {
     }
 
     if (!regexNombre.test(formData.apellido)) {
-      newErrors.nombre = 'No se permiten caracteres especiales en los Apellidos.';
+      newErrors.apellido = 'No se permiten caracteres especiales en los Apellidos.';
+      setErrors(newErrors);
+      return false;
+    }
+
+    if (!regexNombre.test(formData.usuario)) {
+      newErrors.usuario = 'No se permiten caracteres especiales en el Usuario.';
       setErrors(newErrors);
       return false;
     }
@@ -109,9 +119,7 @@ const Registro = () => {
       return false;
     }
 
-
     // Validación de fecha (puedes utilizar una librería como moment.js para facilitar esto)
-    // ...
 
     if (!regexEmail.test(formData.email)) {
       newErrors.email = 'Formato de correo inválido.';
@@ -171,6 +179,8 @@ const Registro = () => {
             <input type="email" name="email" placeholder="Introduce tu Email" onChange={handleChange} />
             <label htmlFor="telefono">Teléfono</label>
             <input type="tel" name="telefono" placeholder="Teléfono" onChange={handleChange} />
+            <label htmlFor="usuario">Usuario <span className="required">*</span></label>
+            <input type="text" name="usuario" placeholder="Introduce tu Usuario" onChange={handleChange} />
             <label htmlFor="passwd">Contraseña <span className="required">*</span></label>
             <div className="password-container">
               <input type={showPassword ? "text" : "password"} name="contraseña" placeholder="Introduce tu Contraseña" onChange={handleChange} />

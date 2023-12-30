@@ -6,14 +6,15 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3001:3001"
     depends_on:
       - db
     environment:
-      - DATABASE_HOST=db
+      - DATABASE_HOST=cytech-mysql
       - DATABASE_USER=root
       - DATABASE_PASSWORD=admin
       - DATABASE_NAME=cytech
+      - DATABASE_PORT=3308
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules

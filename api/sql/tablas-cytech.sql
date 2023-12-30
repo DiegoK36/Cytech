@@ -5,6 +5,7 @@ CREATE TABLE usuario (
   fechaNacimiento DATE,
   email VARCHAR(255) NOT NULL UNIQUE,
   telefono VARCHAR(20),
+  username VARCHAR(255) NOT NULL UNIQUE,
   passwd VARCHAR(255) NOT NULL,
   provincia VARCHAR(255),
   codigoPostal VARCHAR(10),
