@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Puerto de la Aplicación
-EXPOSE 3000
+EXPOSE 3001
 
 # Define el comando para ejecutar la aplicación
-CMD ["node", "app.js"]
+CMD ["node", "src/app.js"]

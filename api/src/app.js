@@ -1,21 +1,40 @@
-import express from 'express';
-import cors from 'cors';
-import { json } from 'body-parser';
-
-// Inicializa la aplicación Express
+// app.js
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
+const cors = require('cors');
 const app = express();
 
-// Aplica middleware
-app.use(cors()); // Habilita CORS
-app.use(json()); // Permite a la aplicación entender JSON
+// Middleware para parsear el cuerpo de las peticiones JSON
+app.use(bodyParser.json());
+app.use(cors());
 
-// Importa las rutas
-import projectRoutes from './routes/projectRoutes';
-import userRoutes from './routes/userRoutes';
+// Conexión a la base de datos MySQL
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'admin',
+  database: 'cytech',
+  port: 3308,
+});
 
-// Usa las rutas
-app.use('/api/projects', projectRoutes);
-app.use('/api/users', userRoutes);
+// Conectar a la base de datos
+db.connect(err => {
+  if (err) {
+    console.error('Error conectando a la base de datos', err);
+    throw err;
+  }
+  console.log('Conectado a la base de datos');
+});
 
-// Exporta la aplicación configurada
-export default app;
+// Importar rutas
+const userRoutes = require('./routes');
+app.use('/api', userRoutes);
+
+// Puerto y servidor en escucha
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
+
+module.exports = app;

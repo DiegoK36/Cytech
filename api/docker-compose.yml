@@ -1,8 +1,10 @@
 version: '3.8'
 services:
   app:
-    container_name: nodejs-backend
-    build: .
+    container_name: cytech-nodejs
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:
@@ -11,21 +13,22 @@ services:
       - DATABASE_HOST=db
       - DATABASE_USER=root
       - DATABASE_PASSWORD=admin
-      - DATABASE_NAME=CyTechDDBB
+      - DATABASE_NAME=cytech
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
 
   db:
-    container_name: mysql-database
+    container_name: cytech-mysql
     image: mysql:5.7
     ports:
-      - "3306:3306"
+      - "3308:3306"
     environment:
       MYSQL_ROOT_PASSWORD: admin
-      MYSQL_DATABASE: CyTechDDBB
+      MYSQL_DATABASE: cytech
     volumes:
       - db-data:/var/lib/mysql
+      - ./sql/tablas-cytech.sql:/docker-entrypoint-initdb.d/tablas-cytech.sql
 
 volumes:
   db-data:

@@ -29,6 +29,7 @@ const Registro = () => {
     codigoPostal: '',
     terminos: false,
   });
+  
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -41,13 +42,33 @@ const Registro = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log(formData);
+      try {
+        const response = await fetch('http://localhost:3000/api/registro', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+  
+        if (response.ok) {
+          const result = await response.json();
+          console.log(result); // Manejar la respuesta exitosa
+          // Aquí podrías, por ejemplo, redirigir al usuario a otra página o mostrar un mensaje de éxito
+        } else {
+          console.error('Error en la respuesta del servidor');
+          // Manejar una respuesta de error del servidor
+        }
+      } catch (error) {
+        console.error('Error al conectarse con el servidor', error);
+        // Manejar errores de conexión
+      }
     } else {
       setShowErrors(true);
-      setTimeout(() => setShowErrors(false), 10000); // Ocultar errores después de 5 segundos
+      setTimeout(() => setShowErrors(false), 10000); // Ocultar errores después de 10 segundos
     }
   };
 
