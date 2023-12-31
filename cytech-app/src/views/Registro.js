@@ -106,10 +106,10 @@ const Registro = () => {
       return false;
     }
 
-    if (!regexNombre.test(formData.usuario)) {
-      newErrors.usuario = 'No se permiten caracteres especiales en el Usuario.';
-      setErrors(newErrors);
-      return false;
+    // Validación de la fecha de nacimiento
+    const resultadoValidacionFecha = validarFechaNacimiento(formData.fechaNacimiento);
+    if (!resultadoValidacionFecha.valido) {
+      newErrors.fechaNacimiento = resultadoValidacionFecha.mensaje;
     }
 
     // Verificar si las contraseñas coinciden
@@ -119,9 +119,8 @@ const Registro = () => {
       return false;
     }
 
-    // Validación de fecha (puedes utilizar una librería como moment.js para facilitar esto)
-
     if (!regexEmail.test(formData.email)) {
+      console.log("Error de formato de correo detectado");
       newErrors.email = 'Formato de correo inválido.';
       setErrors(newErrors);
       return false;
@@ -161,47 +160,99 @@ const Registro = () => {
     return true;
   };
 
+  const validarFechaNacimiento = (fechaNacimiento) => {
+    // La fecha viene en formato yyyy-mm-dd
+    if (!fechaNacimiento) {
+      return { valido: false, mensaje: "Fecha de nacimiento es requerida." };
+    }
+  
+    const partes = fechaNacimiento.split('-');
+    const anio = parseInt(partes[0], 10);
+    const mes = parseInt(partes[1], 10) - 1; // Los meses en JavaScript van de 0 a 11
+    const dia = parseInt(partes[2], 10);
+  
+    const hoy = new Date();
+    let edad = hoy.getFullYear() - anio;
+    if (hoy.getMonth() < mes || (hoy.getMonth() === mes && hoy.getDate() < dia)) {
+      edad--;
+    }
+  
+    if (edad < 18) {
+      return { valido: false, mensaje: "Debes tener al menos 18 años." };
+    }
+  
+    return { valido: true, mensaje: "Fecha de nacimiento válida." };
+  };
+
   return (
     <div className="register-background">
       <div className="register-container">
         <form className="register-form" onSubmit={handleSubmit}>
-          <h2>Regístrate en <span className="title">Cytech</span></h2>
-          <div className="input-group">
-            <label htmlFor="nombre">Nombre <span className="required">*</span></label>
-            <input type="text" name="nombre" placeholder="Introduce tu Nombre" onChange={handleChange} />
-            <label htmlFor="apellidos">Apellidos <span className="required">*</span></label>
-            <input type="text" name="apellido" placeholder="Introduce tus Apellidos" onChange={handleChange} />
+          <h2>Regístrate en <span className="title">Cytech 🧬</span></h2>
+          <div className="input-row">
+            <div className="input-group">
+              <label htmlFor="nombre">Nombre <span className="required">*</span></label>
+              <input type="text" name="nombre" placeholder="Introduce tu Nombre" onChange={handleChange} />
+            </div>
+            <div className="input-group">
+              <label htmlFor="apellido">Apellidos <span className="required">*</span></label>
+              <input type="text" name="apellido" placeholder="Introduce tus Apellidos" onChange={handleChange} />
+            </div>
+          </div>
+          <div className="input-row">
             <div className="input-group">
               <label htmlFor="fechaNacimiento">Fecha de Nacimiento <span className="required">*</span></label>
               <input type="date" id="fechaNacimiento" name="fechaNacimiento" onChange={handleChange} placeholder="DD/MM/AAAA" />
             </div>
-            <label htmlFor="mail">Correo <span className="required">*</span></label>
-            <input type="email" name="email" placeholder="Introduce tu Email" onChange={handleChange} />
-            <label htmlFor="telefono">Teléfono</label>
-            <input type="tel" name="telefono" placeholder="Teléfono" onChange={handleChange} />
-            <label htmlFor="usuario">Usuario <span className="required">*</span></label>
-            <input type="text" name="usuario" placeholder="Introduce tu Usuario" onChange={handleChange} />
-            <label htmlFor="passwd">Contraseña <span className="required">*</span></label>
-            <div className="password-container">
-              <input type={showPassword ? "text" : "password"} name="contraseña" placeholder="Introduce tu Contraseña" onChange={handleChange} />
-              <span className="password-toggle-icon" onClick={() => setShowPassword(!showPassword)}>
-                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-              </span>
+            <div className="input-group">
+              <label htmlFor="mail">Correo <span className="required">*</span></label>
+              <input type="text" name="email" placeholder="Introduce tu Email" onChange={handleChange} />
             </div>
-            <label htmlFor="passwd2">Confirmar Contraseña <span className="required">*</span></label>
-            <input type="password" name="confirmarContraseña" placeholder="Confirma tu Contraseña" onChange={handleChange} />
           </div>
-          <div className="input-group">
-            <label htmlFor="provincia">Dirección de Facturación <span className="required">*</span></label>
-            <select name="provincia" onChange={handleChange}>
-              <option value="">Seleccione una Provincia</option>
-              {provinciasEspaña.map((provincia, index) => (
-                <option key={index} value={provincia.toLowerCase()}>{provincia}</option>
-              ))}
-            </select>
-            <div className="input-group input-inline">
+          <div className="input-row">
+            <div className="input-group">
+              <label htmlFor="usuario">Usuario <span className="required">*</span></label>
+              <input type="text" name="usuario" placeholder="Introduce tu Usuario" onChange={handleChange} />
+            </div>
+            <div className="input-group">
+              <label htmlFor="telefono">Teléfono</label>
+              <input type="tel" name="telefono" placeholder="Teléfono" onChange={handleChange} />
+            </div>
+          </div>
+          <div className="input-row">
+            <div className="input-group">
+              <label htmlFor="passwd">Contraseña <span className="required">*</span></label>
+              <div className="password-container">
+                <input type={showPassword ? "text" : "password"} name="contraseña" placeholder="Introduce tu Contraseña" onChange={handleChange} />
+                <span className="password-toggle-icon" onClick={() => setShowPassword(!showPassword)}>
+                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                </span>
+              </div>
+            </div>
+            <div className="input-group">
+              <label htmlFor="passwd2">Confirmar Contraseña <span className="required">*</span></label>
+              <input type="password" name="confirmarContraseña" placeholder="Confirma tu Contraseña" onChange={handleChange} />
+            </div>
+          </div>
+          <div className="input-row">
+            <div className="input-group-half">
+              <label htmlFor="direccion">Dirección <span className="required">*</span></label>
               <input type="text" id="direccion" name="direccion" placeholder="Dirección" onChange={handleChange} />
-              <input type="text" id="codigoPostal" name="codigoPostal" placeholder="Código Postal" onChange={handleChange} />
+            </div>
+            <div className="input-group-right">
+              <div className="input-group-quarter">
+                <label htmlFor="provincia">Provincia <span className="required">*</span></label>
+                <select name="provincia" onChange={handleChange}>
+                  <option value="">Seleccione una Provincia</option>
+                  {provinciasEspaña.map((provincia, index) => (
+                    <option key={index} value={provincia.toLowerCase()}>{provincia}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="input-group-quarter">
+                <label htmlFor="codigoPostal">Código Postal <span className="required">*</span></label>
+                <input type="text" id="codigoPostal" name="codigoPostal" placeholder="Código Postal" onChange={handleChange} />
+              </div>
             </div>
           </div>
           <div className="input-group checkbox-row">
@@ -213,13 +264,13 @@ const Registro = () => {
             ¿Ya tienes cuenta? <a href="/login" className="login-link-a">Inicia sesión aquí.</a>
           </div>
         </form>
-      </div>
+      </div >
       {showErrors && (
         <div className={`error-container ${Object.keys(errors).length > 0 ? 'visible' : ''}`}>
           <div className="error-message">{Object.values(errors)[0]}</div>
         </div>
       )}
-    </div>
+    </div >
   );
 };
 
