@@ -44,11 +44,10 @@ function Navbar() {
             </div>
 
             <div className="navbar-links">
-                <a href="/home"><FontAwesomeIcon icon={faHome} /> Inicio</a>
-                <a href="/projects"><FontAwesomeIcon icon={faProjectDiagram} /> Proyectos</a>
-                <a href="/categories"><FontAwesomeIcon icon={faThList} /> Categorías</a>
-                <a href="/about-us"><FontAwesomeIcon icon={faUsers} /> Sobre Nosotros</a>
-                <a href="/support"><FontAwesomeIcon icon={faQuestionCircle} /> Soporte</a>
+                <a href="/"><FontAwesomeIcon icon={faProjectDiagram} /> Proyectos</a>
+                <a href="/"><FontAwesomeIcon icon={faThList} /> Categorías</a>
+                <a href="/"><FontAwesomeIcon icon={faUsers} /> Sobre Nosotros</a>
+                <a href="/"><FontAwesomeIcon icon={faQuestionCircle} /> Soporte</a>
             </div>
 
             {/* Botones de inicio de sesión y registro a la derecha */}

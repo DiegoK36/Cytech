@@ -1,30 +1,103 @@
-/* MissionVisionValues.css */
 .mission-vision-values-container {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: white; /* Fondo blanco */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    border-radius: 10px;
-    margin: 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px 0;
+  font-size: 1.1em;
+}
+
+.animated-element {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  max-width: 700px;
+}
+
+.card-image {
+  flex-basis: 40%;
+  padding: 10px;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-text {
+  flex-basis: 60%;
+  padding: 10px;
+  text-align: justify;
+}
+
+.animated-element {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateX(-100%);
+}
+
+.animated-element.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.vision.animated-element {
+  transform: translateX(100%);
+}
+
+.vision.animated-element.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  .mission, .vision, .values {
-    flex-basis: 30%;
-    text-align: center;
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .mission h3, .vision h3, .values h3 {
-    color: #ff6a00; /* Un color que destaque */
-    margin-bottom: 10px;
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .values ul {
-    list-style: none;
-    padding: 0;
+
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
-  .values li {
-    margin-bottom: 5px;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

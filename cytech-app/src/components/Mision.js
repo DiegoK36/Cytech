@@ -1,28 +1,69 @@
-import React from 'react';
-import '../css/Mision.css'; // Asegúrate de crear este archivo CSS y referenciarlo aquí
+import React, { useEffect, useRef } from 'react';
+import inn from '../assets/Innovacion.png'
+import vida from '../assets/Vida.png'
+import apoyo from '../assets/Apoyo.png'
+import '../css/Mision.css';
 
 const Mision = () => {
+
+  const missionRef = useRef();
+  const visionRef = useRef();
+  const valuesRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    }, {
+      threshold: 0.1 // Ajustar según sea necesario
+    });
+  
+    observer.observe(missionRef.current);
+    observer.observe(visionRef.current);
+    observer.observe(valuesRef.current);
+  
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="mission-vision-values-container">
-      <div className="mission">
-        <h3>Misión</h3>
-        <p>Nuestra misión es innovar y revolucionar el campo de la tecnología médica para mejorar la calidad de vida de las personas en todo el mundo.</p>
+    <div ref={missionRef} className="animated-element">
+      <div className="card-image">
+        <img src={inn} alt="Misión" />
       </div>
-      <div className="vision">
-        <h3>Visión</h3>
-        <p>Aspiramos a ser líderes globales en tecnología médica, proporcionando soluciones avanzadas y accesibles para todos.</p>
-      </div>
-      <div className="values">
-        <h3>Valores</h3>
-        <ul>
-          <li>Innovación constante</li>
-          <li>Compromiso con la calidad</li>
-          <li>Integridad y ética</li>
-          <li>Colaboración y comunidad</li>
-        </ul>
+      <div className="card-text">
+        <h3>🔬 Revolución en Tecnología Médica</h3>
+        <p>Explora y colabora en el futuro de la Medicina con Cytech, donde nos dedicamos a impulsar los avances que redefinen la atención médica.</p>
       </div>
     </div>
-  );
+    <div ref={visionRef} className="vision animated-element">
+      <div className="card-text">
+        <h3>¡Transforma la Vida de las Personas! 👨‍⚕️</h3>
+        <p>Cada innovación tiene una historia humana, por tanto, tu contribución no solo impulsa el futuro de la tecnología, sino que cambia vidas. </p>
+      </div>
+      <div className="card-image">
+        <img src={vida} alt="Visión" />
+      </div>
+    </div>
+    <div ref={valuesRef} className="animated-element">
+      <div className="card-image">
+        <img src={apoyo} alt="Valores" />
+      </div>
+      <div className="card-text">
+        <h3>🌍 Únete a la Revolución Médica</h3>
+        <p>Ya seas un innovador en busca de apoyo, un financiador con visión de futuro, o alguien con el deseo de contribuir al bienestar global, tu papel es crucial.</p>
+      </div>
+    </div>
+  </div>
+);
 };
+
 
 export default Mision;
