@@ -13,12 +13,34 @@ Bienvenido al repositorio oficial de Cytech, la plataforma líder en crowdfundin
 - Herramientas de análisis y seguimiento para proyectos.
 - Información sobre seguridad y privacidad.
 
-## **¿Cómo iniciar el Proyecto?**:
+## **¿Cómo iniciar el Proyecto?**
 
 1. Clonar el repositorio
 
 ```bash
 git clone https://github.com/DiegoK36/Cytech
+```
+
+2. Iniciar el Frontend de Cytech
+
+```bash
+cd Cytech/cytech-app/
+
+npm install
+
+npm start
+```
+
+3. Iniciar el Backend de Cytech
+
+```bash
+cd Cytech/api/src
+
+docker-compose up -d db
+
+npm install
+
+npm run dev
 ```
 
 ## 🤝 **Colaboradores**:
