@@ -13,6 +13,14 @@ Bienvenido al repositorio oficial de Cytech, la plataforma líder en crowdfundin
 - Herramientas de análisis y seguimiento para proyectos.
 - Información sobre seguridad y privacidad.
 
+## **¿Cómo iniciar el Proyecto?**:
+
+1. Clonar el repositorio
+
+```bash
+git clone https://github.com/DiegoK36/Cytech
+```
+
 ## 🤝 **Colaboradores**:
 Actualmente, se encuentran en colaboración los siguientes desarrolladores: Diego Rodríguez y Víctor Martín.
 
