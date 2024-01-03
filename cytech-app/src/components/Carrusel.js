@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/Carrusel.css'; // Asegúrate de que este es el archivo CSS correcto para tu componente Carrusel
 
 const Carrusel = ({ items }) => {
-    // Duplica los elementos para crear un flujo continuo
+    // Duplica los elementos para crear un flujo continuo calvo
     const duplicatedItems = [...items, ...items];
 
     return (
