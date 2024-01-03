@@ -1,0 +1,179 @@
+.why-choose-us-container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 120px;
+  padding: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline;
+  color: white;
+  background-clip: text;
+}
+.why-choose-us-container h2 span {
+  background: linear-gradient(90deg, rgb(0, 255, 4) 0%, rgb(149, 255, 0) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.content-section {
+  width: 60%;
+}
+.image-section {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.image-section img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.accordion-item {
+  background-color: rgb(26, 26, 26);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion-title {
+  color: white;
+  background: rgba(232, 232, 232, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  padding-right: 30px;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo al hacer hover en el primer elemento */
+.accordion-item:nth-child(3) .accordion-title:hover,
+.accordion-item:nth-child(3).active .accordion-title {
+  background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,254,255,1) 100%);
+  color: white;
+  border-radius: 5px;
+}
+
+/* Estilo al hacer hover en el segundo elemento */
+.accordion-item:nth-child(4) .accordion-title:hover,
+.accordion-item:nth-child(4).active .accordion-title {
+  background: linear-gradient(90deg, rgb(255, 77, 0) 0%, rgb(255, 153, 0) 100%);
+  color: white;
+  border-radius: 5px;
+}
+
+/* Estilo al hacer hover en el tercer elemento */
+.accordion-item:nth-child(5) .accordion-title:hover,
+.accordion-item:nth-child(5).active .accordion-title {
+  background: linear-gradient(90deg, rgb(0, 255, 4) 0%, rgb(149, 255, 0) 100%);
+  color: white;
+  border-radius: 5px;
+}
+
+/* Estilo al hacer hover en el cuarto elemento */
+.accordion-item:nth-child(6) .accordion-title:hover,
+.accordion-item:nth-child(6).active .accordion-title {
+  background-image: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(200, 0, 255) 100%);
+  color: white;
+  border-radius: 5px;
+}
+
+
+.arrow {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.arrow.up {
+  border: solid white;
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.accordion-content {
+  display: none;
+  padding: 5px 20px;
+  border-radius: 0px;
+  background-color: rgba(232, 232, 232, 0);
+  color: white;
+  text-align: justify;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+/* PorqueElegirnos.css */
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutToLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-100%); opacity: 0; }
+}
+
+/* Repite para slideInFromRight y slideOutToRight */
+
+.content-section.slideIn, .accordion-item.slideIn {
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+.content-section.slideOut {
+  animation: slideOutToLeft 0.5s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.image-section.slideIn {
+  animation: slideInFromRight 0.5s ease-out forwards;
+}
+
+.image-section.slideOut {
+  animation: slideOutToRight 0.5s ease-out forwards;
+}
