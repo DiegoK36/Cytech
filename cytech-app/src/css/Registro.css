@@ -1,7 +1,4 @@
 .register-container {
-  background-color: #ffffff05;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(25px);
   position: relative;
   z-index: 10;
   display: flex;
@@ -13,9 +10,12 @@
 .register-form {
   display: flex;
   flex-direction: column;
-  background-color: white;
-  padding: 30px;
+  background: rgba( 0, 0, 0, 0.7 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
   border-radius: 10px;
+  padding:0 30px 0 30px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   flex-wrap: wrap;
@@ -26,7 +26,9 @@
   text-align: left;
   margin-bottom: 40px;
   font-size: 30px;
-  color: #333;
+  color: white;
+  font-weight: 600;
+  text-align: center;
 }
 
 .register-form input {
@@ -35,7 +37,8 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(0,254,255,1) ;
+  background-color: transparent;
 }
 
 .register-form button {
@@ -52,7 +55,9 @@
 .register-form button:hover {
   background-color: #5078ff;
 }
-
+input{
+  color: white;
+}
 .input-row {
   display: flex;
   justify-content: space-between;
@@ -82,6 +87,10 @@
   margin-bottom: 20px;
 }
 
+label{
+  color: white;
+}
+
 .input-group-half label {
   display: block;
   margin-bottom: 8px;
@@ -90,6 +99,7 @@
 .input-group-right label {
   display: block;
   margin-bottom: 8px;
+
 }
 
 .input-group-right {
@@ -122,9 +132,9 @@
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: white;
-  color: #6b6b6b;
+  border: 1px solid rgba(0,254,255,1); 
+  background-color: transparent;
+  color: #cccccc;
 }
 
 .input-group label {
@@ -158,6 +168,7 @@
 .login-link {
   text-align: center;
   margin-top: 20px;
+  color: white;
 }
 
 .login-link-a {
@@ -178,16 +189,42 @@
   justify-content: flex-start;
 }
 
-.checkbox-row input[type="checkbox"] {
-  margin-right: 210px;
-  margin-top: 0px;
+.label-checkbox {
+  cursor: pointer;
+  position: relative;
+  line-height: 1; /* Ajusta la altura de línea para centrar verticalmente el check */
 }
+
+input[type=checkbox].checkbox-custom {
+  display: none;
+  margin-top: 0;
+}
+
+.label-checkbox:before {
+  content: "";
+  background: transparent;
+  border: 1px solid rgba(0, 254, 255, 1);
+  border-radius: 3px;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: 10px; /* Ajusta según sea necesario */
+
+}
+
+input[type=checkbox].checkbox-custom:checked + .label-checkbox:before {
+  background-color: rgba(0, 254, 255, 1);
+  background-size: contain; /* La imagen se ajustará al tamaño del contenedor */
+  background-image: url(../assets/check.png); /* Establece la imagen */
+}
+
+
+
 
 .checkbox-row label {
   margin: 0;
   white-space: nowrap;
   position: relative;
-  left: -195px;
   margin-bottom: 10px;
 }
 
@@ -200,11 +237,13 @@
 }
 
 h2 .title {
-  color: #4169e1;
+  background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,254,255,1) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .input-group label .title {
-  color: #4169e1;
+  color: rgba(0,254,255,1);
 }
 
 .password-container {
@@ -217,7 +256,7 @@ h2 .title {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #4169e1;
+  color: rgba(0,254,255,1);
 }
 
 /* Ajuste para el input dentro del contenedor de contraseña */
@@ -239,28 +278,31 @@ h2 .title {
 }
 
 .input-group input[type="date"] {
-  color: #6b6b6b;
+  color: #cccccc;
   font-family: inherit;
 
   ::-webkit-datetime-edit-text {
-    color: #6b6b6b;
+    color: #cccccc;
   }
 
   ::-webkit-datetime-edit-month-field {
-    color: #6b6b6b;
+    color: #cccccc;
   }
 
   ::-webkit-datetime-edit-day-field {
-    color: #6b6b6b;
+    color: #cccccc;
   }
 
   ::-webkit-datetime-edit-year-field {
-    color: #6b6b6b;
+    color: #cccccc;
   }
-
-  ::-webkit-calendar-picker-indicator {
-    filter: invert(35%) sepia(92%) saturate(1500%) hue-rotate(207deg) brightness(90%) contrast(88%);
-  }
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(85%) sepia(10%) saturate(10000%) hue-rotate(140deg) brightness(100%) contrast(100%);
+  cursor: pointer;
+}
+::placeholder{
+  color: #cccccc;
 }
 
 @media (max-width: 768px) {

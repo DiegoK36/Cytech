@@ -188,7 +188,7 @@ const Registro = () => {
     <div className="register-background">
       <div className="register-container">
         <form className="register-form" onSubmit={handleSubmit}>
-          <h2>Regístrate en <span className="title">Cytech 🧬</span></h2>
+          <h2>Regístrate en <span className="title">Cytech</span></h2>
           <div className="input-row">
             <div className="input-group">
               <label htmlFor="nombre">Nombre <span className="required">*</span></label>
@@ -256,8 +256,8 @@ const Registro = () => {
             </div>
           </div>
           <div className="input-group checkbox-row">
-            <input type="checkbox" id="terminos" name="terminos" onChange={handleChange} />
-            <label htmlFor="terminos">Acepto los <span className="title">términos y condiciones</span> <span className="required">*</span></label>
+            <input type="checkbox" className="checkbox-custom" id="terminos" name="terminos" onChange={handleChange} />
+            <label htmlFor="terminos" className='label-checkbox'>Acepto los <span className="title">términos y condiciones</span> <span className="required">*</span></label>
           </div>
           <button type="submit">Registrarse</button>
           <div className="login-link">
