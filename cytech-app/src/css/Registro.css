@@ -15,7 +15,7 @@
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
   border-radius: 10px;
-  padding:0 30px 0 30px;
+  padding:0 30px 20px 30px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   flex-wrap: wrap;
@@ -41,19 +41,44 @@
   background-color: transparent;
 }
 
-.register-form button {
-  flex-basis: 100%;
-  background-color: #4169e1;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
+.bn634-hover {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
   cursor: pointer;
-  width: 100%;
+  padding: 10px 20px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 5px;
+  transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
-.register-form button:hover {
-  background-color: #5078ff;
+.bn634-hover:hover {
+  background-position: 100% 0;
+  transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  box-shadow: 0 4px 15px 0 rgba(0, 255, 242, 0);
+  transition: all .4s ease-in-out;
+}
+
+.bn634-hover:focus {
+  outline: none;
+}
+
+.bn634-hover.bn34 {
+  background-image: linear-gradient(
+    to right,
+    #0055ff,
+    #00d9ff,
+    #00c8ff,
+    #0055ff
+  );
+  transform: all .4s ease-in-out;
 }
 input{
   color: white;
@@ -128,7 +153,6 @@ label{
 .input-group-quarter select {
   height: auto;
   overflow-y: auto;
-  font-family: inherit;
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -136,6 +160,11 @@ label{
   background-color: transparent;
   color: #cccccc;
 }
+.input-group-quarter select option {
+  color: black;
+}
+
+
 
 .input-group label {
   display: block;
@@ -172,13 +201,12 @@ label{
 }
 
 .login-link-a {
-  color: #4169e1;
+  color: rgba(0,254,255,1);
   text-decoration: none;
 }
 
 .login-link-a:hover {
   text-decoration: underline;
-  color: #5078ff;
 }
 
 .checkbox-row {
@@ -279,10 +307,8 @@ h2 .title {
 
 .input-group input[type="date"] {
   color: #cccccc;
-  font-family: inherit;
-
   ::-webkit-datetime-edit-text {
-    color: #cccccc;
+    color: #000000;
   }
 
   ::-webkit-datetime-edit-month-field {

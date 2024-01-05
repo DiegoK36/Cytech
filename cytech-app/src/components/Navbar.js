@@ -12,6 +12,9 @@ function Navbar() {
     const handleRegisterClick = () => {
       navigate('/registro');
     };
+    const handleLoginClick = () => {
+        navigate('/login');
+    };
 
     const [scrolled, setScrolled] = useState(false);
 
@@ -52,7 +55,7 @@ function Navbar() {
 
             {/* Botones de inicio de sesión y registro a la derecha */}
             <div className="navbar-buttons">
-                <button className="btn-light">Iniciar Sesión</button>
+                <button className="btn-light" onClick={handleLoginClick}>Iniciar Sesión</button>
                 <button className="btn btn-dark" onClick={handleRegisterClick}>Registrarse</button>
             </div>
         </nav>
