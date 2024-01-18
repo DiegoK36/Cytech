@@ -15,9 +15,8 @@
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
   border-radius: 10px;
-  padding:0 30px 20px 30px;
+  padding:20px 30px 20px 30px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
   flex-wrap: wrap;
   max-width: 1000px;
 }
@@ -101,14 +100,12 @@ input{
 .input-group {
   margin-bottom: 15px;
   flex: 0 0 50%;
-  width: 48%;
-  max-width: 50%;
 
 }
 
 .input-group-half {
   flex: 1;
-  margin-right: 50px;
+  margin-right: 30px;
   margin-bottom: 20px;
 }
 
@@ -130,8 +127,8 @@ label{
 .input-group-right {
   flex: 1;
   display: flex;
-  justify-content: space-between;
-  padding-right: 18px;
+  gap: 10px;
+  padding-right: 10px;
 }
 
 .input-group-quarter span {
@@ -184,14 +181,6 @@ label{
 
 .input-inline input:last-child {
   margin-right: 0;
-}
-
-.input-group:nth-child(odd) {
-  padding-right: 10px;
-}
-
-.input-group:nth-child(even) {
-  padding-left: 10px;
 }
 
 .login-link {
@@ -386,4 +375,26 @@ h2 .title {
   margin-right: 5px;
   margin-bottom: 5px;
   margin-top: 5px;
+}
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-login{
+  height: 200px;
+  width: 200px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+.volver-container{
+  margin-bottom: 20px;
+}
+.volver{
+  width: 20px;
+  height: 20px;
+  transition: ease-in-out 0.3s;
+}
+.volver:hover{
+  scale: 1.3;
 }

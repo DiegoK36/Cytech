@@ -33,9 +33,6 @@ const Registro = () => {
   });
   let navigate = useNavigate();
 
-  const handleLoginClick = () => {
-    navigate('/login');
-  };
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -193,7 +190,14 @@ const Registro = () => {
     <div className="register-background">
       <div className="register-container">
         <form className="register-form" onSubmit={handleSubmit}>
-          <h2>Regístrate en <span className="title">Cytech</span></h2>
+          <div className='volver-container'>
+                <a href="/">
+                <svg role="presentation" aria-hidden="true" viewBox="0 0 28 28" className='volver'>
+                <path d="M11.5 25.2c1.1 0 1.8-.8 1.8-1.7 0-.5-.2-1-.6-1.3L9.5 19 6 15.6l3.2.2h16.6c1.1 0 1.9-.7 1.9-1.8s-.8-1.8-1.9-1.8H9.2l-3.2.2 3.6-3.3 3.2-3.2c.3-.3.6-.8.6-1.3 0-1-.7-1.7-1.8-1.7-.4 0-.9.2-1.3.6L1 12.6c-.4.4-.6.9-.6 1.4s.2 1 .6 1.3l9.3 9.3c.3.4.8.6 1.2.6z" fill='white'></path>
+              </svg>
+              </a>
+                <h2> Regístrate en <span className="title">Cytech</span></h2>
+              </div>
           <div className="input-row">
             <div className="input-group">
               <label htmlFor="nombre">Nombre <span className="required">*</span></label>
@@ -266,7 +270,7 @@ const Registro = () => {
           </div>
           <button type="submit" className='bn634-hover bn34'>Registrarse</button>
           <div className="login-link">
-            ¿Ya tienes cuenta? <a href="/login" className="login-link-a" onClick={handleLoginClick}>Inicia sesión aquí.</a>
+            ¿Ya tienes cuenta? <a href="/login" className="login-link-a">Inicia sesión aquí.</a>
           </div>
         </form>
       </div >
