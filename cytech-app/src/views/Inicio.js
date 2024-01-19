@@ -16,7 +16,7 @@ import '../css/Inicio.css';
 
 const staticText = "Contribuye en Proyectos sobre ";
 const words = ["Innovación", "Tecnología", "Medicina"];
-const colors = ["#00bbff", "#ff7700", "#03ff81"];
+const colors = ["#00bbff", "#ff7700", "#00FF00"];
 
 const items = [
     {
@@ -73,7 +73,9 @@ const Inicio = () => {
         }
         return 'translateX(0px)';
     };
-
+    const handleClickCategory = () => {
+        window.location.href = '/categorias';
+    };
     return (
         <>
             <Navbar />
@@ -84,7 +86,7 @@ const Inicio = () => {
                         <TypingEffect staticText={staticText} dynamicWords={words} colors={colors} speed={200} />
                         <p>Descubre y financia los proyectos más innovadores en el ámbito de la tecnología y la medicina.</p>
                         <div className="hero-buttons">
-                            <button className="bn632-hover bn23">Explorar Proyectos</button>
+                            <button className="bn632-hover bn23" onClick={handleClickCategory}>Explorar Proyectos</button>
                             <button className="bn3">Comenzar un Proyecto</button>
                         </div>
                     </section>

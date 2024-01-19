@@ -47,8 +47,7 @@ function Navbar() {
             </div>
 
             <div className="navbar-links">
-                <a href="/"><FontAwesomeIcon icon={faProjectDiagram} /> Proyectos</a>
-                <a href="/"><FontAwesomeIcon icon={faThList} /> Categorías</a>
+                <a href="/categorias"><FontAwesomeIcon icon={faProjectDiagram} /> Proyectos</a>
                 <a href="/"><FontAwesomeIcon icon={faUsers} /> Sobre Nosotros</a>
                 <a href="/"><FontAwesomeIcon icon={faQuestionCircle} /> Soporte</a>
             </div>

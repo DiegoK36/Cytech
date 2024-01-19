@@ -65,7 +65,7 @@ h2 {
 /* Estilo al hacer hover en el primer elemento */
 .accordion-item:nth-child(3) .accordion-title:hover,
 .accordion-item:nth-child(3).active .accordion-title {
-  background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,254,255,1) 100%);
+  background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,255,255,1) 100%);
   color: white;
   border-radius: 5px;
 }
@@ -81,7 +81,7 @@ h2 {
 /* Estilo al hacer hover en el tercer elemento */
 .accordion-item:nth-child(5) .accordion-title:hover,
 .accordion-item:nth-child(5).active .accordion-title {
-  background: linear-gradient(90deg, rgb(0, 255, 4) 0%, rgb(149, 255, 0) 100%);
+  background: linear-gradient(90deg, rgb(0, 255, 0) 0%, rgb(149, 255, 0) 100%);
   color: white;
   border-radius: 5px;
 }
