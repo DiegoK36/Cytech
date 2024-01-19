@@ -31,7 +31,8 @@ const Registro = () => {
     codigoPostal: '',
     terminos: false,
   });
-  let navigate = useNavigate();
+  
+  useNavigate();
 
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
