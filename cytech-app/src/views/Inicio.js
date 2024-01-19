@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-<<<<<<< HEAD
 import CTA from '../components/CTA';
-=======
-import CTA from '../components/CTA'; 
->>>>>>> victor
 import TypingEffect from '../components/TypingEffect';
 import Carrusel from '../components/Carrusel';
 import Mision from '../components/Mision';
@@ -20,11 +16,7 @@ import '../css/Inicio.css';
 
 const staticText = "Contribuye en Proyectos sobre ";
 const words = ["Innovación", "Tecnología", "Medicina"];
-<<<<<<< HEAD
 const colors = ["#0078FF", "#FF4B4B", "#23D160"];
-=======
-const colors = ["#00bbff", "#ff7700", "#03ff81"];
->>>>>>> victor
 
 const items = [
     {
@@ -76,11 +68,7 @@ const Inicio = () => {
         if (heroSection) {
             const heroHeight = heroSection.offsetHeight;
             const maxDisplacement = heroHeight * displacementFactor;
-<<<<<<< HEAD
             const displacement = Math.min(scrollPosition * displacementFactor, maxDisplacement);
-=======
-            const displacement = Math.min(displacementFactor, maxDisplacement);
->>>>>>> victor
             return `translateX(${displacement}px)`;
         }
         return 'translateX(0px)';
@@ -93,7 +81,6 @@ const Inicio = () => {
                 <main className="main-content">
                 <div className="hero-container">
                     <section className="hero" style={{ transform: getTransformValue() }}>
-<<<<<<< HEAD
                         <TypingEffect staticText={staticText} dynamicWords={words} colors={colors} speed={150} />
                         <p>Descubre y financia los proyectos más innovadores en el ámbito de la tecnología y la medicina.</p>
                         <div className="hero-buttons">
@@ -102,16 +89,6 @@ const Inicio = () => {
                         </div>
                     </section>
                     </div>
-=======
-                        <TypingEffect staticText={staticText} dynamicWords={words} colors={colors} speed={200} />
-                        <p>Descubre y financia los proyectos más innovadores en el ámbito de la tecnología y la medicina.</p>
-                        <div className="hero-buttons">
-                            <button className="bn632-hover bn23">Explorar Proyectos</button>
-                            <button className="bn3">Comenzar un Proyecto</button>
-                        </div>
-                    </section>
-                </div>
->>>>>>> victor
                     <Carrusel items={items} />
                     <CTA />
                     <PorqueElegirnos />
