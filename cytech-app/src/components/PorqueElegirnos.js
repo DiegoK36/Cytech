@@ -46,7 +46,11 @@ const PorqueElegirnos = () => {
   return (
     <div ref={sectionRef} className={`why-choose-us-container ${animationClass}`}>
       <div className={`content-section ${animationClass}`}>
+<<<<<<< HEAD
         <h2>¿Por qué confiar en nosotros?</h2>
+=======
+        <h2>¿Por qué <span>confiar</span> en nosotros?</h2>
+>>>>>>> victor
         <p>Nuestro objetivo es potenciar y contribuir en proyectos de Tecnología aplicada en Medicina.</p>
         {accordionItems.map((item, index) => (
           <div key={index} className={`accordion-item ${activeTab === index ? 'active' : ''}`}>

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+<<<<<<< HEAD
+=======
+import { useNavigate } from 'react-router-dom';
+>>>>>>> victor
 import '../css/Registro.css';
 
 const Registro = () => {
@@ -30,7 +34,15 @@ const Registro = () => {
     codigoPostal: '',
     terminos: false,
   });
+<<<<<<< HEAD
 
+=======
+  let navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+>>>>>>> victor
   const [errors, setErrors] = useState({});
   const [showErrors, setShowErrors] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -188,6 +200,7 @@ const Registro = () => {
     <div className="register-background">
       <div className="register-container">
         <form className="register-form" onSubmit={handleSubmit}>
+<<<<<<< HEAD
           <h2>Regístrate en <span className="title">Cytech 🧬</span></h2>
           <div className="input-row">
             <div className="input-group">
@@ -197,6 +210,17 @@ const Registro = () => {
             <div className="input-group">
               <label htmlFor="apellido">Apellidos <span className="required">*</span></label>
               <input type="text" name="apellido" placeholder="Introduce tus Apellidos" onChange={handleChange} />
+=======
+          <h2>Regístrate en <span className="title">Cytech</span></h2>
+          <div className="input-row">
+            <div className="input-group">
+              <label htmlFor="nombre">Nombre <span className="required">*</span></label>
+              <input type="text" name="nombre" placeholder="Introduzca su nombre" onChange={handleChange} />
+            </div>
+            <div className="input-group">
+              <label htmlFor="apellido">Apellidos <span className="required">*</span></label>
+              <input type="text" name="apellido" placeholder="Introduzca sus apellidos" onChange={handleChange} />
+>>>>>>> victor
             </div>
           </div>
           <div className="input-row">
@@ -206,13 +230,21 @@ const Registro = () => {
             </div>
             <div className="input-group">
               <label htmlFor="mail">Correo <span className="required">*</span></label>
+<<<<<<< HEAD
               <input type="text" name="email" placeholder="Introduce tu Email" onChange={handleChange} />
+=======
+              <input type="text" name="email" placeholder="Introduzca su correo electrónico" onChange={handleChange} />
+>>>>>>> victor
             </div>
           </div>
           <div className="input-row">
             <div className="input-group">
               <label htmlFor="usuario">Usuario <span className="required">*</span></label>
+<<<<<<< HEAD
               <input type="text" name="usuario" placeholder="Introduce tu Usuario" onChange={handleChange} />
+=======
+              <input type="text" name="usuario" placeholder="Introduzca su nombre de usuario" onChange={handleChange} />
+>>>>>>> victor
             </div>
             <div className="input-group">
               <label htmlFor="telefono">Teléfono</label>
@@ -223,7 +255,11 @@ const Registro = () => {
             <div className="input-group">
               <label htmlFor="passwd">Contraseña <span className="required">*</span></label>
               <div className="password-container">
+<<<<<<< HEAD
                 <input type={showPassword ? "text" : "password"} name="contraseña" placeholder="Introduce tu Contraseña" onChange={handleChange} />
+=======
+                <input type={showPassword ? "text" : "password"} name="contraseña" placeholder="Introduzca su contraseña" onChange={handleChange} />
+>>>>>>> victor
                 <span className="password-toggle-icon" onClick={() => setShowPassword(!showPassword)}>
                   <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                 </span>
@@ -231,19 +267,31 @@ const Registro = () => {
             </div>
             <div className="input-group">
               <label htmlFor="passwd2">Confirmar Contraseña <span className="required">*</span></label>
+<<<<<<< HEAD
               <input type="password" name="confirmarContraseña" placeholder="Confirma tu Contraseña" onChange={handleChange} />
+=======
+              <input type="password" name="confirmarContraseña" placeholder="Confirme su contraseña" onChange={handleChange} />
+>>>>>>> victor
             </div>
           </div>
           <div className="input-row">
             <div className="input-group-half">
               <label htmlFor="direccion">Dirección <span className="required">*</span></label>
+<<<<<<< HEAD
               <input type="text" id="direccion" name="direccion" placeholder="Dirección" onChange={handleChange} />
+=======
+              <input type="text" id="direccion" name="direccion" placeholder="Introduzca su dirección" onChange={handleChange} />
+>>>>>>> victor
             </div>
             <div className="input-group-right">
               <div className="input-group-quarter">
                 <label htmlFor="provincia">Provincia <span className="required">*</span></label>
                 <select name="provincia" onChange={handleChange}>
+<<<<<<< HEAD
                   <option value="">Seleccione una Provincia</option>
+=======
+                  <option value="">Seleccione una provincia</option>
+>>>>>>> victor
                   {provinciasEspaña.map((provincia, index) => (
                     <option key={index} value={provincia.toLowerCase()}>{provincia}</option>
                   ))}
@@ -256,12 +304,21 @@ const Registro = () => {
             </div>
           </div>
           <div className="input-group checkbox-row">
+<<<<<<< HEAD
             <input type="checkbox" id="terminos" name="terminos" onChange={handleChange} />
             <label htmlFor="terminos">Acepto los <span className="title">términos y condiciones</span> <span className="required">*</span></label>
           </div>
           <button type="submit">Registrarse</button>
           <div className="login-link">
             ¿Ya tienes cuenta? <a href="/login" className="login-link-a">Inicia sesión aquí.</a>
+=======
+            <input type="checkbox" className="checkbox-custom" id="terminos" name="terminos" onChange={handleChange} />
+            <label htmlFor="terminos" className='label-checkbox'>Acepto los <span className="title">términos y condiciones</span> <span className="required">*</span></label>
+          </div>
+          <button type="submit" className='bn634-hover bn34'>Registrarse</button>
+          <div className="login-link">
+            ¿Ya tienes cuenta? <a href="/login" className="login-link-a" onClick={handleLoginClick}>Inicia sesión aquí.</a>
+>>>>>>> victor
           </div>
         </form>
       </div >

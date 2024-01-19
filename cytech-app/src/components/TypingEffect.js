@@ -31,10 +31,18 @@ const TypingEffect = ({ staticText, dynamicWords, colors, speed = 200 }) => {
       {staticText}{' '}
       <span style={{ color: colors[index] }} >
         {dynamicWords[index].substring(0, subIndex)}
+<<<<<<< HEAD
         <span className="cursor">_</span>
+=======
+        <span className="cursor">|</span>
+>>>>>>> victor
       </span>
     </h2>
   );
 };
 
+<<<<<<< HEAD
 export default TypingEffect;
+=======
+export default TypingEffect;
+>>>>>>> victor

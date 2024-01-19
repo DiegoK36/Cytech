@@ -27,9 +27,17 @@ const CTA = () => {
   
     return (
       <div className="cta-container" style={{ display: isVisible ? 'block' : 'none' }}>
+<<<<<<< HEAD
         <button className="cta-button">
           Únete a Nosotros
         </button>
+=======
+        <a href='#newsletter'>
+          <button className="cta-button">
+          Únete a Nosotros
+          </button>
+        </a>
+>>>>>>> victor
       </div>
     );
   };

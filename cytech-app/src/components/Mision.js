@@ -39,13 +39,21 @@ const Mision = () => {
         <img src={inn} alt="Misión" />
       </div>
       <div className="card-text">
+<<<<<<< HEAD
         <h3>🔬 Revolución en Tecnología Médica</h3>
+=======
+        <h3>🔬 Revolución en <span className='gradient-text'>Tecnología</span> Médica</h3>
+>>>>>>> victor
         <p>Explora y colabora en el futuro de la Medicina con Cytech, donde nos dedicamos a impulsar los avances que redefinen la atención médica.</p>
       </div>
     </div>
     <div ref={visionRef} className="vision animated-element">
       <div className="card-text">
+<<<<<<< HEAD
         <h3>¡Transforma la Vida de las Personas! 👨‍⚕️</h3>
+=======
+        <h3><span className='gradient-text2'>Transforma</span> la Vida de las Personas 👨‍⚕️</h3>
+>>>>>>> victor
         <p>Cada innovación tiene una historia humana, por tanto, tu contribución no solo impulsa el futuro de la tecnología, sino que cambia vidas. </p>
       </div>
       <div className="card-image">
@@ -57,7 +65,11 @@ const Mision = () => {
         <img src={apoyo} alt="Valores" />
       </div>
       <div className="card-text">
+<<<<<<< HEAD
         <h3>🌍 Únete a la Revolución Médica</h3>
+=======
+        <h3>🌍 Únete a la <span className='gradient-text3'>Revolución</span> Médica</h3>
+>>>>>>> victor
         <p>Ya seas un innovador en busca de apoyo, un financiador con visión de futuro, o alguien con el deseo de contribuir al bienestar global, tu papel es crucial.</p>
       </div>
     </div>

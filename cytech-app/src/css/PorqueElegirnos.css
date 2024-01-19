@@ -1,26 +1,50 @@
 .why-choose-us-container {
   display: flex;
   align-items: flex-start;
+<<<<<<< HEAD
   background-color: rgb(255, 255, 255);
+=======
+>>>>>>> victor
   margin-top: 120px;
   padding: 20px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
+<<<<<<< HEAD
 
 .content-section {
   width: 60%;
 }
 
+=======
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline;
+  color: white;
+  background-clip: text;
+}
+.why-choose-us-container h2 span {
+  background: linear-gradient(90deg, rgb(0, 255, 4) 0%, rgb(149, 255, 0) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.content-section {
+  width: 60%;
+}
+>>>>>>> victor
 .image-section {
   width: 40%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> victor
 .image-section img {
   width: 100%;
   max-width: 400px;
@@ -29,6 +53,7 @@
 }
 
 .accordion-item {
+<<<<<<< HEAD
   background-color: #f8f8f8;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -40,6 +65,20 @@
   background: rgba(232, 232, 232, 0);
   transition: background-color 0.3s;
   border: none;
+=======
+  background-color: rgb(26, 26, 26);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion-title {
+  color: white;
+  background: rgba(232, 232, 232, 0);
+  border: none;
+  border-radius: 5px;
+>>>>>>> victor
   padding: 15px;
   padding-right: 30px;
   text-align: left;
@@ -51,6 +90,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
 }
 
 .accordion-title:hover,
@@ -61,6 +101,46 @@
 
 .arrow {
   border: solid #333;
+=======
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo al hacer hover en el primer elemento */
+.accordion-item:nth-child(3) .accordion-title:hover,
+.accordion-item:nth-child(3).active .accordion-title {
+  background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,254,255,1) 100%);
+  color: white;
+  border-radius: 5px;
+}
+
+/* Estilo al hacer hover en el segundo elemento */
+.accordion-item:nth-child(4) .accordion-title:hover,
+.accordion-item:nth-child(4).active .accordion-title {
+  background: linear-gradient(90deg, rgb(255, 77, 0) 0%, rgb(255, 153, 0) 100%);
+  color: white;
+  border-radius: 5px;
+}
+
+/* Estilo al hacer hover en el tercer elemento */
+.accordion-item:nth-child(5) .accordion-title:hover,
+.accordion-item:nth-child(5).active .accordion-title {
+  background: linear-gradient(90deg, rgb(0, 255, 4) 0%, rgb(149, 255, 0) 100%);
+  color: white;
+  border-radius: 5px;
+}
+
+/* Estilo al hacer hover en el cuarto elemento */
+.accordion-item:nth-child(6) .accordion-title:hover,
+.accordion-item:nth-child(6).active .accordion-title {
+  background-image: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(200, 0, 255) 100%);
+  color: white;
+  border-radius: 5px;
+}
+
+
+.arrow {
+  border: solid white;
+>>>>>>> victor
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
@@ -79,10 +159,16 @@
 .accordion-content {
   display: none;
   padding: 5px 20px;
+<<<<<<< HEAD
   border-left: 3px solid #4169e1;
   border-radius: 0px;
   background-color: #fff;
   color: #333;
+=======
+  border-radius: 0px;
+  background-color: rgba(232, 232, 232, 0);
+  color: white;
+>>>>>>> victor
   text-align: justify;
   font-size: 0.9rem;
   line-height: 1.4;

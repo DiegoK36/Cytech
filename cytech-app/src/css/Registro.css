@@ -1,7 +1,10 @@
 .register-container {
+<<<<<<< HEAD
   background-color: #ffffff05;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(25px);
+=======
+>>>>>>> victor
   position: relative;
   z-index: 10;
   display: flex;
@@ -13,9 +16,18 @@
 .register-form {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   background-color: white;
   padding: 30px;
   border-radius: 10px;
+=======
+  background: rgba( 0, 0, 0, 0.7 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  padding:0 30px 20px 30px;
+>>>>>>> victor
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   flex-wrap: wrap;
@@ -26,7 +38,13 @@
   text-align: left;
   margin-bottom: 40px;
   font-size: 30px;
+<<<<<<< HEAD
   color: #333;
+=======
+  color: white;
+  font-weight: 600;
+  text-align: center;
+>>>>>>> victor
 }
 
 .register-form input {
@@ -35,6 +53,7 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+<<<<<<< HEAD
   border: 1px solid #ccc;
 }
 
@@ -53,6 +72,54 @@
   background-color: #5078ff;
 }
 
+=======
+  border: 1px solid rgba(0,254,255,1) ;
+  background-color: transparent;
+}
+
+.bn634-hover {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 5px;
+  transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn634-hover:hover {
+  background-position: 100% 0;
+  transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  box-shadow: 0 4px 15px 0 rgba(0, 255, 242, 0);
+  transition: all .4s ease-in-out;
+}
+
+.bn634-hover:focus {
+  outline: none;
+}
+
+.bn634-hover.bn34 {
+  background-image: linear-gradient(
+    to right,
+    #0055ff,
+    #00d9ff,
+    #00c8ff,
+    #0055ff
+  );
+  transform: all .4s ease-in-out;
+}
+input{
+  color: white;
+}
+>>>>>>> victor
 .input-row {
   display: flex;
   justify-content: space-between;
@@ -82,6 +149,13 @@
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
+=======
+label{
+  color: white;
+}
+
+>>>>>>> victor
 .input-group-half label {
   display: block;
   margin-bottom: 8px;
@@ -90,6 +164,10 @@
 .input-group-right label {
   display: block;
   margin-bottom: 8px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> victor
 }
 
 .input-group-right {
@@ -118,6 +196,7 @@
 .input-group-quarter select {
   height: auto;
   overflow-y: auto;
+<<<<<<< HEAD
   font-family: inherit;
   width: 100%;
   padding: 10px;
@@ -126,6 +205,20 @@
   background-color: white;
   color: #6b6b6b;
 }
+=======
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,254,255,1); 
+  background-color: transparent;
+  color: #cccccc;
+}
+.input-group-quarter select option {
+  color: black;
+}
+
+
+>>>>>>> victor
 
 .input-group label {
   display: block;
@@ -158,16 +251,27 @@
 .login-link {
   text-align: center;
   margin-top: 20px;
+<<<<<<< HEAD
 }
 
 .login-link-a {
   color: #4169e1;
+=======
+  color: white;
+}
+
+.login-link-a {
+  color: rgba(0,254,255,1);
+>>>>>>> victor
   text-decoration: none;
 }
 
 .login-link-a:hover {
   text-decoration: underline;
+<<<<<<< HEAD
   color: #5078ff;
+=======
+>>>>>>> victor
 }
 
 .checkbox-row {
@@ -178,16 +282,54 @@
   justify-content: flex-start;
 }
 
+<<<<<<< HEAD
 .checkbox-row input[type="checkbox"] {
   margin-right: 210px;
   margin-top: 0px;
 }
 
+=======
+.label-checkbox {
+  cursor: pointer;
+  position: relative;
+  line-height: 1; /* Ajusta la altura de línea para centrar verticalmente el check */
+}
+
+input[type=checkbox].checkbox-custom {
+  display: none;
+  margin-top: 0;
+}
+
+.label-checkbox:before {
+  content: "";
+  background: transparent;
+  border: 1px solid rgba(0, 254, 255, 1);
+  border-radius: 3px;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: 10px; /* Ajusta según sea necesario */
+
+}
+
+input[type=checkbox].checkbox-custom:checked + .label-checkbox:before {
+  background-color: rgba(0, 254, 255, 1);
+  background-size: contain; /* La imagen se ajustará al tamaño del contenedor */
+  background-image: url(../assets/check.png); /* Establece la imagen */
+}
+
+
+
+
+>>>>>>> victor
 .checkbox-row label {
   margin: 0;
   white-space: nowrap;
   position: relative;
+<<<<<<< HEAD
   left: -195px;
+=======
+>>>>>>> victor
   margin-bottom: 10px;
 }
 
@@ -200,11 +342,21 @@
 }
 
 h2 .title {
+<<<<<<< HEAD
   color: #4169e1;
 }
 
 .input-group label .title {
   color: #4169e1;
+=======
+  background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,254,255,1) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.input-group label .title {
+  color: rgba(0,254,255,1);
+>>>>>>> victor
 }
 
 .password-container {
@@ -217,7 +369,11 @@ h2 .title {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+<<<<<<< HEAD
   color: #4169e1;
+=======
+  color: rgba(0,254,255,1);
+>>>>>>> victor
 }
 
 /* Ajuste para el input dentro del contenedor de contraseña */
@@ -239,6 +395,7 @@ h2 .title {
 }
 
 .input-group input[type="date"] {
+<<<<<<< HEAD
   color: #6b6b6b;
   font-family: inherit;
 
@@ -262,6 +419,32 @@ h2 .title {
     filter: invert(35%) sepia(92%) saturate(1500%) hue-rotate(207deg) brightness(90%) contrast(88%);
   }
 }
+=======
+  color: #cccccc;
+  ::-webkit-datetime-edit-text {
+    color: #000000;
+  }
+
+  ::-webkit-datetime-edit-month-field {
+    color: #cccccc;
+  }
+
+  ::-webkit-datetime-edit-day-field {
+    color: #cccccc;
+  }
+
+  ::-webkit-datetime-edit-year-field {
+    color: #cccccc;
+  }
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(85%) sepia(10%) saturate(10000%) hue-rotate(140deg) brightness(100%) contrast(100%);
+  cursor: pointer;
+}
+::placeholder{
+  color: #cccccc;
+}
+>>>>>>> victor
 
 @media (max-width: 768px) {
   .input-group {

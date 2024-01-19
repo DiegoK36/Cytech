@@ -5,6 +5,7 @@
     z-index: 1000;
     transition: opacity 3s ease-in-out;
 }
+<<<<<<< HEAD
 
 .cta-button {
     padding: 0.5rem 1rem;
@@ -17,3 +18,43 @@
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+=======
+.cta-button {
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .cta-button:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    scale: 1.1;
+    transition: all .4s ease-in-out;
+  }
+  
+  .cta-button:focus {
+    outline: none;
+  }
+  
+  .cta-button{
+    background-image: linear-gradient(
+      to right,
+      #ff0d00,
+      #ff9500,
+      #ff9500,
+      #ff0d00
+    );
+    transform: all .4s ease-in-out;
+  }
+>>>>>>> victor

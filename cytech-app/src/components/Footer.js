@@ -11,9 +11,15 @@ function Footer() {
                     <h3>Recibe más Información</h3>
                     <p>Estate al tanto de proyectos nuevos y en tendencia.</p>
                 </div>
+<<<<<<< HEAD
                 <div className="newsletter-subscribe">
                     <input type="email" placeholder="Introduce tu Email" aria-label="Email para Contactarte" />
                     <button type="submit">Suscribirme</button>
+=======
+                <div className="newsletter-subscribe" id="newsletter">
+                    <input type="email" placeholder="Introduce tu Email" aria-label="Email para Contactarte" />
+                    <button type="submit" className='bn633-hover bn33'>Suscribirme</button>
+>>>>>>> victor
                 </div>
             </div>
             <hr />

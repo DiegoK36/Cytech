@@ -3,7 +3,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
     background-color: #fff;
+=======
+    background-color: rgb(16, 16, 16);
+>>>>>>> victor
     transition: box-shadow 0.3s ease-in-out;
     padding: 0.5rem 2rem;
     position: fixed;
@@ -14,7 +18,12 @@
 }
 
 .navbar.scrolled {
+<<<<<<< HEAD
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+=======
+    background-color: rgb(26,26,26);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+>>>>>>> victor
 }
 
 .navbar-brand {
@@ -29,7 +38,11 @@
 
 .navbar-title {
     font-size: 1.5em;
+<<<<<<< HEAD
     color: #333;
+=======
+    color: white;
+>>>>>>> victor
     font-weight: bold;
 }
 
@@ -41,15 +54,24 @@
 }
 
 .navbar-links a {
+<<<<<<< HEAD
     color: #333;
+=======
+    color: white;
+>>>>>>> victor
     display: flex;
     align-items: center;
     text-decoration: none;
     padding: 1rem;
+<<<<<<< HEAD
+=======
+    transition: ease-in-out 0.3s;
+>>>>>>> victor
 }
 
 .navbar-links a svg {
     margin-right: 6px;
+<<<<<<< HEAD
     color: #333333cd;
     font-size: 0.8rem;
 }
@@ -58,10 +80,29 @@
     color: #007bff;
 }
 
+=======
+    align-items: center;
+    color: white;
+    font-size: 0.8rem;
+    transition: ease-in-out 0.3s;
+}
+
+.navbar-links a:hover {
+    background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,254,255,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 1.1rem;
+}
+.navbar-links a:hover svg {
+    color: #007bff; /* o el color que desees para el SVG en hover */
+    font-size: 1rem;
+}
+>>>>>>> victor
 /* Botones de inicio de sesión y registro */
 .navbar-buttons {
     display: flex;
     justify-content: flex-end;
+<<<<<<< HEAD
 }
 
 .btn {
@@ -90,6 +131,73 @@
     background-color: #5078ff;
 }
 
+=======
+    
+}
+.btn {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+  .btn-light {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 0.05em solid rgb(255, 255, 255);
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0);
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #ffffff;
+    text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+    text-align: center;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+  }
+  
+  .btn-light:hover {
+    color: black;
+    background-color: rgb(255, 255, 255);
+  }
+  .btn-dark {
+    font-size: 0.8rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 5px;
+    transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .btn-dark:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    scale: 1.1;
+    transition: all .4s ease-in-out;
+  }
+  
+  .btn-dark:focus {
+    outline: none;
+  }
+  
+  .btn-dark{
+    background-image: linear-gradient(
+      to right,
+      #006aff,
+      #00aaff,
+      #00aaff,
+      #0080ff
+    );
+    transform: all .4s ease-in-out;
+  }
+>>>>>>> victor
 /* Evita que el contenido principal no se superponga con el Navbar */
 body {
     padding-top: 70px;
