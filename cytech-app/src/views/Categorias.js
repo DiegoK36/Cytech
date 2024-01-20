@@ -51,14 +51,14 @@ const proyecto = [
         imgUrl: CardioNet,
         title: 'CardioNet - Monitoreo Cardíaco',
         category_class: 'otro',
-        category: 'Otro',
+        category: 'Otros',
         description: 'CardioNet es un dispositivo portátil que proporciona monitoreo cardíaco en tiempo real utilizando inteligencia artificial.'
     },
     {
         imgUrl: SkinScan,
         title: 'SkinScan - Diagnóstico de Piel',
         category_class: 'otro',
-        category: 'Otro',
+        category: 'Otros',
         description: 'SkinScan es una aplicación móvil avanzada que utiliza el aprendizaje automático para analizar y diagnosticar una variedad de condiciones de la piel.'
     },
     {
@@ -86,14 +86,14 @@ const proyecto = [
         imgUrl: CardioNet,
         title: 'CardioNet - Monitoreo Cardíaco',
         category_class: 'otro',
-        category: 'Otro',
+        category: 'Otros',
         description: 'CardioNet es un dispositivo portátil que proporciona monitoreo cardíaco en tiempo real utilizando inteligencia artificial.'
     },
     {
         imgUrl: SkinScan,
         title: 'SkinScan - Diagnóstico de Piel',
         category_class: 'otro',
-        category: 'Otro',
+        category: 'Otros',
         description: 'SkinScan es una aplicación móvil avanzada que utiliza el aprendizaje automático para analizar y diagnosticar una variedad de condiciones de la piel.'
     },
     {
@@ -112,6 +112,20 @@ const proyecto = [
     },
 ];
 const Categorias = () => {
+    const [activeCategoria, setActiveCategoria] = useState(null);
+    const [filteredProyectos, setFilteredProyectos] = useState(proyecto);
+
+    const handleCategoriaClick = (categoria) => {
+        setActiveCategoria(categoria);
+
+        // Aplica el filtro o restablece si la categoría es null
+        setFilteredProyectos(
+            categoria
+                ? proyecto.filter((proyecto) => proyecto.category === categoria)
+                : proyecto
+        );
+    };
+
 
     const getTransformValue = () => {
         const displacementFactor = 9; // FACTOR DE DESPLAZAMIENTO
@@ -139,9 +153,14 @@ const Categorias = () => {
                         </div>
                     </section>
                 </div>
-                    
-                    <Categoria items={items} />
-                    <Proyecto proyecto={proyecto} />
+                    <div className="section-title-container">
+                    <h3 className="section-title">Categorías</h3>
+                    </div>
+                    <Categoria items={items} onCategoriaClick={handleCategoriaClick} />
+                    <div className="section-title-container">
+                    <h3 className="section-title">Proyectos</h3>
+                    </div>
+                    <Proyecto proyecto={filteredProyectos} />
                     <CTA />
                 </main>
                 <Footer />
