@@ -1,0 +1,64 @@
+.userImage{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+}
+
+.divider{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #1a1a1a;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button-user{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding: 5px;
+    color: white;
+    background-color: #1a1a1a;
+    border-radius: 50px;
+    border: 1px solid rgb(0,255,255);
+    transition: ease-in-out 0.4s;
+}
+
+.button-user:hover{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding: 5px;
+    color: #1a1a1a;
+    background-color: rgb(0,255,255)    ;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.button-user-negative{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding: 5px;
+    color: white;
+    background-color: #1a1a1a;
+    border-radius: 50px;
+    border: 1px solid rgb(255, 0, 0);
+    transition: ease-in-out 0.4s;
+}
+
+.button-user-negative:hover{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding: 5px;
+    color: #1a1a1a;
+    background-color: rgb(255, 0, 0)    ;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    scale: 1.1;
+}

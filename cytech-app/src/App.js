@@ -5,6 +5,7 @@ import Registro from './views/Registro';
 import Login from './views/Login';
 import Categorias from './views/Categorias';
 import Crear from './views/Crear';
+import Usuario from './views/Usuario';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path='/categorias' element={<Categorias />} />
           <Route path='/crear' element={<Crear />} />
+          <Route path='/usuario' element={<Usuario />} />
         </Routes>
       </div>
     </Router>

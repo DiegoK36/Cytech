@@ -5,35 +5,35 @@
     flex-direction: column;
     width: auto;
 }
-.volver-container{
+.volver-container1{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.volver-container h3{
+.volver-container1 h3{
     color: white;
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 0;
 }
-.volver-container a{
+.volver-container1 a{
     text-decoration: none;
     display: flex;
     align-items: end;
 
 }
-.volver{
+.volver1{
     width: 25px;
     height: 25px;
     margin-right: 10px;
     margin-bottom: 3px;
     transition: ease-in-out 0.3s;
 }
-.volver:hover{
+.volver1:hover{
     scale: 1.3;
     transform: translateX(-10px);
 }
-form{
+.crear-form{
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -67,10 +67,7 @@ form{
     font-weight: bold;
     margin-top: 15px;
 }
-.bn634-hover{
-    width: 99.2%;
-    border-radius: 50px;
-}
+
 .degradado{
     background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,255,255,1) 100%);
     -webkit-text-fill-color: transparent;
@@ -82,7 +79,6 @@ form{
 }
 input{
     height: auto;
-    overflow-y: auto;
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -93,7 +89,7 @@ input{
 .input-group-special{
     height: 36px;
 }
-select{
+.monedas{
     height: 36px;
     background: rgba(0,254,255,1);
     overflow-y: auto;
