@@ -71,8 +71,8 @@ form{
     width: 99.2%;
     border-radius: 50px;
 }
-span{
-       background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,255,255,1) 100%);
+.degradado{
+    background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,255,255,1) 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-weight: bold; 

@@ -14,7 +14,7 @@ const Crear = () => {
                 </a>
               </div>
       <div className="crear-container">
-        <h2> Crea un nuevo <span>proyecto</span></h2>
+        <h2> Crea un nuevo <span className='degradado'>proyecto</span></h2>
         <div>
             <form className="crear-form">
               <div className='column'>
