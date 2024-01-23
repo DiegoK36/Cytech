@@ -76,11 +76,12 @@ const Crear = () => {
                 </div>
             </form>
         </div>
-        <div class="card1" id="card1">
-        <div class="content">
-            <span>Crear Proyecto</span>
-            </div>
-        </div>
+        <button className='card1'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span> Crear Proyecto
+        </button>
       </div>
     </div>
   );
