@@ -44,9 +44,9 @@ const Crear = () => {
                     <label htmlFor="categoria">Categoría <span className="required">*</span></label>
                       <div className="button-container">
                         <button type='button' className='neurotecnologia-button'>Neurotecnología</button>
-                      <button type='button' className='protesis-button'>Prótesis</button>
-                      <button type='button' className='medicina-button'>Medicina</button>
-                      <button type='button' className='otros-button'>Otros</button>
+                        <button type='button' className='medicina-button'>IA</button>
+                        <button type='button' className='protesis-button'>Prótesis</button>
+                        <button type='button' className='otros-button'>Salud</button>
                     </div>
               </div>
                 
