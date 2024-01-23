@@ -68,8 +68,6 @@ const [showPassword1, setShowPassword1] = useState(false);
                   </br>
                   <button type="button" className='bn634-hover bn34'><img src={salir} alt='icono de salir' className='icon'></img> Cerrar Sesión</button>
                   <button type="button" className='bn635-hover bn35'><FontAwesomeIcon icon={faTrash} className='icon'/> Borrar Cuenta</button>
-
-
         </form>
       </div >
     </div >

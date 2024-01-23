@@ -130,7 +130,7 @@ input::file-selector-button{
 
 /*css del boton*/
 
-.card {
+.card1 {
   width: 100%;
   height: 44px;
   background: #171717;
@@ -144,7 +144,7 @@ input::file-selector-button{
   border-radius: 50px;
 }
 
-.card .content {
+.card1 .content {
   border-radius: 50px;
   background: #171717;
   width: calc(100% - 25px);
@@ -169,11 +169,11 @@ input::file-selector-button{
   filter: blur(50px);
 }
 
-.card:hover .content::before {
+.card1:hover .content::before {
   opacity: 1;
 }
 
-.card::before {
+.card1::before {
   opacity: 0;
   content: " ";
   position: absolute;
@@ -192,12 +192,12 @@ input::file-selector-button{
   animation-play-state: paused;
 }
 
-.card:hover::before {
+.card1:hover::before {
   opacity: 1;
   animation-play-state: running;
 }
 
-.card::after {
+.card1::after {
   position: absolute;
   content: " ";
   display: block;
