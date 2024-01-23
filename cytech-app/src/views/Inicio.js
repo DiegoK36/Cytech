@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NavbarUser from '../components/NavbarUser';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CTA from '../components/CTA'; 
@@ -49,6 +50,8 @@ const items = [
 const Inicio = () => {
     
     const [, setScrollPosition] = useState(0);
+    // Verifica si existe un token en el almacenamiento local
+    const hasToken = !!localStorage.getItem('token');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -79,7 +82,7 @@ const Inicio = () => {
     };
     return (
         <>
-            <Navbar />
+            {hasToken ? <NavbarUser /> : <Navbar />} {/* Muestra NavbarUser si hay token, de lo contrario, muestra el Navbar normal */}
             <div className="home-container">
                 <main className="main-content">
                 <div className="hero-container">

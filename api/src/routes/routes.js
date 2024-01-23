@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const mysql = require('mysql');
+const config = require('config');
+const jwt = require('jsonwebtoken');
 const saltRounds = 10;
 
 // Conexión a la base de datos MySQL
@@ -21,10 +23,28 @@ db.connect(err => {
   console.log('Conectado a la base de datos');
 });
 
+// Middleware para verificar el token JWT
+function verificarToken(req, res, next) {
+  const token = req.headers['authorization'];
+  if (!token) {
+    return res.status(401).send('Acceso denegado');
+  }
+
+  try {
+    const decoded = jwt.verify(token, config.get('jwtSecret'));
+    req.user = decoded.user;
+    next();
+  } catch (error) {
+    res.status(400).send('Token inválido');
+  }
+}
+
 // Endpoint del Registro
 router.post('/registro', (req, res) => {
-  console.log('Acceso a Registro Endpoint');
   const { nombre, apellido, fechaNacimiento, email, telefono, usuario, contraseña, provincia, codigoPostal, terminos } = req.body;
+
+  // URL de imagen de perfil por defecto
+  const defaultProfilePictureURL = 'https://cdn.discordapp.com/attachments/1071576440253984838/1198402211093426366/avatar1.png?ex=65bec608&is=65ac5108&hm=ef8754790004aabdb26c9147baa302b723903d8e2d677063214eede76eb57a2f&';
 
   // Comprobar si el nombre de usuario ya existe
   const queryVerificarUsuario = 'SELECT * FROM usuario WHERE username = ?';
@@ -46,10 +66,10 @@ router.post('/registro', (req, res) => {
 
       // Insertar el nuevo usuario en la base de datos
       const queryInsertarUsuario = `
-        INSERT INTO usuario (nombre, apellido, fechaNacimiento, email, telefono, username, passwd, provincia, codigoPostal, terminos, fechaRegistro)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW());
+        INSERT INTO usuario (nombre, apellido, fechaNacimiento, email, telefono, username, passwd, provincia, codigoPostal, terminos, fechaRegistro, profilePictureURL)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?);
       `;
-      db.query(queryInsertarUsuario, [nombre, apellido, fechaNacimiento, email, telefono, usuario, hash, provincia, codigoPostal, terminos], (error) => {
+      db.query(queryInsertarUsuario, [nombre, apellido, fechaNacimiento, email, telefono, usuario, hash, provincia, codigoPostal, terminos, defaultProfilePictureURL], (error) => {
         if (error) {
           if (error.code === 'ER_DUP_ENTRY' && error.sqlMessage.includes('email')) {
             console.error('Intento de registrar con un email duplicado:', email);
@@ -61,6 +81,75 @@ router.post('/registro', (req, res) => {
         res.send('Usuario registrado con éxito');
       });
     });
+  });
+});
+
+// Endpoint de Inicio de Sesión
+router.post('/login', (req, res) => {
+
+  const { usuario, contraseña } = req.body;
+
+  // Comprobar si el usuario existe en la base de datos
+  const queryVerificarUsuario = 'SELECT * FROM usuario WHERE username = ?';
+  db.query(queryVerificarUsuario, [usuario], (error, results) => {
+    if (error) {
+      console.error('Error al verificar el usuario:', error);
+      return res.status(500).send('Error al procesar la solicitud');
+    }
+
+    if (results.length === 0) {
+      return res.status(400).send('Credenciales inválidas');
+    }
+
+    // Verificar la contraseña utilizando bcrypt
+    const hashedPassword = results[0].passwd;
+    bcrypt.compare(contraseña, hashedPassword, (err, isMatch) => {
+      if (err) {
+        console.error('Error al comparar contraseñas:', err);
+        return res.status(500).send('Error al procesar la solicitud');
+      }
+
+      if (!isMatch) {
+        return res.status(400).send('Credenciales inválidas');
+      }
+
+      // Si las credenciales son válidas, puedes generar un token JWT y enviarlo al cliente
+      const payload = {
+        user: {
+          id: results[0].id, // Reemplaza con la propiedad adecuada que representa la identificación del usuario en tu base de datos
+        },
+      };
+
+      jwt.sign(
+        payload,
+        config.get('jwtSecret'),
+        { expiresIn: 7200 }, // 2 Horas de duración
+        (err, token) => {
+          if (err) {
+            console.error('Error al generar el token JWT:', err);
+            return res.status(500).send('Error al procesar la solicitud');
+          }
+          res.json({ token, user: { id: results[0].id } });
+        }
+      );
+    });
+  });
+});
+
+// Endpoint para obtener los datos del perfil del usuario
+router.get('/perfil', verificarToken, (req, res) => {
+  const userId = req.user.id;
+  const query = 'SELECT username, profilePictureURL FROM usuario WHERE id = ?';
+
+  db.query(query, [userId], (error, results) => {
+    if (error) {
+      console.error('Error al obtener datos del usuario:', error);
+      return res.status(500).send('Error al procesar la solicitud');
+    }
+    if (results.length === 0) {
+      return res.status(404).send('Usuario no encontrado');
+    }
+    res.json(results[0]);
   });
 });
 

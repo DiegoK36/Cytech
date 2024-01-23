@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Proyectos.css'; // Asegúrate de que este es el archivo CSS correcto para tu componente Carrusel
+import '../css/Proyectos.css';
 
 const Proyectos = ({ proyecto }) => {
     return (

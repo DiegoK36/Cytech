@@ -10,12 +10,12 @@
 .register-form {
   display: flex;
   flex-direction: column;
-  background: rgba( 0, 0, 0, 0.7 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 7px );
-  -webkit-backdrop-filter: blur( 7px );
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   border-radius: 10px;
-  padding:20px 30px 20px 30px;
+  padding: 20px 30px 20px 30px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
   max-width: 1000px;
@@ -36,7 +36,7 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  border: 1px solid rgba(0,254,255,1) ;
+  border: 1px solid rgba(0, 254, 255, 1);
   background-color: transparent;
 }
 
@@ -46,7 +46,7 @@
   color: #fff;
   cursor: pointer;
   padding: 10px 20px;
-  text-align:center;
+  text-align: center;
   border: none;
   background-size: 300% 100%;
   border-radius: 5px;
@@ -70,18 +70,18 @@
 }
 
 .bn634-hover.bn34 {
-  background-image: linear-gradient(
-    to right,
-    #0055ff,
-    #00d9ff,
-    #00c8ff,
-    #0055ff
-  );
+  background-image: linear-gradient(to right,
+      #0055ff,
+      #00d9ff,
+      #00c8ff,
+      #0055ff);
   transform: all .4s ease-in-out;
 }
-input{
+
+input {
   color: white;
 }
+
 .input-row {
   display: flex;
   justify-content: space-between;
@@ -109,7 +109,7 @@ input{
   margin-bottom: 20px;
 }
 
-label{
+label {
   color: white;
 }
 
@@ -143,7 +143,9 @@ label{
   width: calc(50% - 10px);
 }
 
-.input-group-half input, .input-group-quarter select, .input-group-quarter input {
+.input-group-half input,
+.input-group-quarter select,
+.input-group-quarter input {
   width: 100%;
 }
 
@@ -153,10 +155,11 @@ label{
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid rgba(0,254,255,1); 
+  border: 1px solid rgba(0, 254, 255, 1);
   background-color: transparent;
   color: #cccccc;
 }
+
 .input-group-quarter select option {
   color: black;
 }
@@ -190,7 +193,7 @@ label{
 }
 
 .login-link-a {
-  color: rgba(0,254,255,1);
+  color: rgba(0, 254, 255, 1);
   text-decoration: none;
 }
 
@@ -209,7 +212,8 @@ label{
 .label-checkbox {
   cursor: pointer;
   position: relative;
-  line-height: 1; /* Ajusta la altura de línea para centrar verticalmente el check */
+  line-height: 1;
+  /* Ajusta la altura de línea para centrar verticalmente el check */
 }
 
 input[type=checkbox].checkbox-custom {
@@ -225,14 +229,17 @@ input[type=checkbox].checkbox-custom {
   display: inline-block;
   height: 12px;
   width: 12px;
-  margin-right: 10px; /* Ajusta según sea necesario */
+  margin-right: 10px;
+  /* Ajusta según sea necesario */
 
 }
 
-input[type=checkbox].checkbox-custom:checked + .label-checkbox:before {
+input[type=checkbox].checkbox-custom:checked+.label-checkbox:before {
   background-color: rgba(0, 254, 255, 1);
-  background-size: contain; /* La imagen se ajustará al tamaño del contenedor */
-  background-image: url(../assets/check.png); /* Establece la imagen */
+  background-size: contain;
+  /* La imagen se ajustará al tamaño del contenedor */
+  background-image: url(../assets/check.png);
+  /* Establece la imagen */
 }
 
 
@@ -254,13 +261,13 @@ input[type=checkbox].checkbox-custom:checked + .label-checkbox:before {
 }
 
 h2 .title {
-  background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,254,255,1) 100%);
+  background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 254, 255, 1) 100%);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
 
 .input-group label .title {
-  color: rgba(0,254,255,1);
+  color: rgba(0, 254, 255, 1);
 }
 
 .password-container {
@@ -273,7 +280,7 @@ h2 .title {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: rgba(0,254,255,1);
+  color: rgba(0, 254, 255, 1);
 }
 
 /* Ajuste para el input dentro del contenedor de contraseña */
@@ -296,6 +303,7 @@ h2 .title {
 
 .input-group input[type="date"] {
   color: #cccccc;
+
   ::-webkit-datetime-edit-text {
     color: #000000;
   }
@@ -312,11 +320,13 @@ h2 .title {
     color: #cccccc;
   }
 }
+
 ::-webkit-calendar-picker-indicator {
   filter: invert(85%) sepia(10%) saturate(10000%) hue-rotate(140deg) brightness(100%) contrast(100%);
   cursor: pointer;
 }
-::placeholder{
+
+::placeholder {
   color: #cccccc;
 }
 
@@ -354,6 +364,28 @@ h2 .title {
   animation: fadeInOut 10s ease-in-out;
 }
 
+/* Estilos de Globo de Éxito */
+.success-container {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 128, 0, 0.5);
+  /* Verde claro */
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  z-index: 1000;
+  opacity: 0;
+}
+
+.success-container.visible {
+  display: block;
+  animation: fadeInOut 10s ease-in-out;
+}
+
 @keyframes fadeInOut {
 
   0%,
@@ -376,25 +408,37 @@ h2 .title {
   margin-bottom: 5px;
   margin-top: 5px;
 }
-.img-container{
+
+.success-message {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.img-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.logo-login{
+
+.logo-login {
   height: 200px;
   width: 200px;
   margin-top: -20px;
   margin-bottom: -20px;
 }
-.volver-container{
+
+.volver-container {
   margin-bottom: 20px;
 }
-.volver{
+
+.volver {
   width: 20px;
   height: 20px;
   transition: ease-in-out 0.3s;
 }
-.volver:hover{
+
+.volver:hover {
   scale: 1.3;
 }

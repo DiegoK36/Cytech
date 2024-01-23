@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/Navbar.css';
 import logo from '../assets/Logo_Cytech.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faProjectDiagram, faThList, faUsers, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faProjectDiagram, faUsers, faQuestionCircle, faHome } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
@@ -47,6 +47,7 @@ function Navbar() {
             </div>
 
             <div className="navbar-links">
+                <a href="/"><FontAwesomeIcon icon={faHome} /> Inicio</a>
                 <a href="/categorias"><FontAwesomeIcon icon={faProjectDiagram} /> Proyectos</a>
                 <a href="/"><FontAwesomeIcon icon={faUsers} /> Sobre Nosotros</a>
                 <a href="/"><FontAwesomeIcon icon={faQuestionCircle} /> Soporte</a>

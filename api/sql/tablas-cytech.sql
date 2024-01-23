@@ -10,5 +10,6 @@ CREATE TABLE usuario (
   provincia VARCHAR(255),
   codigoPostal VARCHAR(10),
   terminos BOOLEAN NOT NULL,
-  fechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  fechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  profilePictureURL VARCHAR(255) NOT NULL
 );

@@ -1,3 +1,9 @@
+/* Estilos para el contenido principal */
+main {
+    background-color: rgb(16, 16, 16);
+    min-height: 100vh;
+}
+
 .categoria-container {
     overflow: hidden;
     width: 100%;
@@ -10,6 +16,10 @@
     justify-content: center;
 }
 
+p {
+    font-size: 18px;
+}
+
 .categoria-item {
     display: flex;
     flex-direction: column;
@@ -19,85 +29,98 @@
     padding: 20px 0 20px 0;
     border-radius: 15px;
     overflow: hidden;
-    background-color: rgb(26,26,26);
+    background-color: rgb(26, 26, 26);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease-in-out;
 }
+
 .categoria-item:nth-child(1) h3 {
-    background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 255, 255, 1) 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
 .categoria-item:nth-child(1):hover h3 {
     background: rgb(26, 26, 26);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
 .categoria-item:nth-child(1):hover {
-    background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 255, 255, 1) 100%);
     scale: 1.1;
 }
-.categoria-item:nth-child(1):hover img{
+
+.categoria-item:nth-child(1):hover img {
     filter: grayscale(100%) brightness(500%) invert(0.9);
 }
 
 
 
 .categoria-item:nth-child(2) h3 {
-  background: linear-gradient(90deg, rgb(255, 77, 0) 0%, rgb(255, 153, 0) 100%);
+    background: linear-gradient(90deg, rgb(255, 77, 0) 0%, rgb(255, 153, 0) 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
 .categoria-item:nth-child(2):hover h3 {
     background: rgb(26, 26, 26);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
 .categoria-item:nth-child(2):hover {
-  background: linear-gradient(90deg, rgb(255, 77, 0) 0%, rgb(255, 153, 0) 100%);
-  scale: 1.1;
+    background: linear-gradient(90deg, rgb(255, 77, 0) 0%, rgb(255, 153, 0) 100%);
+    scale: 1.1;
 }
-.categoria-item:nth-child(2):hover img{
+
+.categoria-item:nth-child(2):hover img {
     filter: grayscale(100%) brightness(500%) invert(0.9);
 }
 
 
 .categoria-item:nth-child(3) h3 {
-  background: linear-gradient(90deg, rgb(0, 255, 0) 0%, rgb(221, 255, 0) 100%);
+    background: linear-gradient(90deg, rgb(0, 255, 0) 0%, rgb(221, 255, 0) 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
 .categoria-item:nth-child(3):hover h3 {
     background: rgb(26, 26, 26);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
 .categoria-item:nth-child(3):hover {
-  background: linear-gradient(90deg, rgb(0, 255, 0) 0%, rgb(221, 255, 0) 100%);
-  scale: 1.1;
+    background: linear-gradient(90deg, rgb(0, 255, 0) 0%, rgb(221, 255, 0) 100%);
+    scale: 1.1;
 }
-.categoria-item:nth-child(3):hover img{
+
+.categoria-item:nth-child(3):hover img {
     filter: grayscale(100%) brightness(500%) invert(0.9);
 }
 
 
 .categoria-item:nth-child(4) h3 {
-  background-image: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(200, 0, 255) 100%);
+    background-image: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(200, 0, 255) 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
 .categoria-item:nth-child(4):hover h3 {
     background: rgb(26, 26, 26);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
 .categoria-item:nth-child(4):hover {
-  background-image: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(200, 0, 255) 100%);
+    background-image: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(200, 0, 255) 100%);
     scale: 1.1;
 }
-.categoria-item:nth-child(4):hover img{
+
+.categoria-item:nth-child(4):hover img {
     filter: grayscale(100%) brightness(500%) invert(0.9);
 }
 
@@ -113,4 +136,398 @@
     font-weight: bold;
     font-size: 1.5em;
     margin-bottom: 0px;
+}
+
+/* Estilos Tarjeta */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    text-align: center;
+}
+
+
+.card-container {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    margin-top: 70px;
+    width: 350px;
+    height: 414px;
+    transition: 200ms;
+}
+
+#card {
+    position: absolute;
+    text-align: center;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 20px;
+    transition: 700ms;
+}
+
+#card::before {
+    content: '';
+    filter: blur(2rem);
+    opacity: 30%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    transition: 200ms;
+}
+
+/* Estilos específicos para cada color de tarjeta */
+.card-color-1 {
+    background: linear-gradient(43deg, rgb(0, 42, 255) 0%, rgb(80, 192, 200)46%, rgb(112, 255, 245) 100%);
+}
+
+.card-color-1::before {
+    background: linear-gradient(43deg, rgb(0, 42, 255) 0%, rgb(80, 192, 200)46%, rgb(112, 255, 245) 100%);
+}
+
+.card-color-2 {
+    background: linear-gradient(43deg, rgb(43, 160, 41) 0%, rgb(38, 179, 255) 46%, rgb(0, 34, 255) 100%);
+}
+
+.card-color-2::before {
+    background: linear-gradient(43deg, rgb(43, 160, 41) 0%, rgb(38, 179, 255) 46%, rgb(0, 34, 255) 100%);
+}
+
+.card-color-3 {
+    background: linear-gradient(43deg, rgb(181, 80, 232) 0%, rgb(25, 54, 199) 46%, rgb(11, 152, 213) 100%);
+}
+
+.card-color-3::before {
+    background: linear-gradient(43deg, rgb(181, 80, 232) 0%, rgb(25, 54, 199) 46%, rgb(11, 152, 213) 100%);
+}
+
+.card-color-4 {
+    background: linear-gradient(43deg, rgb(28, 28, 247) 0%, rgb(9, 215, 230) 46%, rgb(0, 255, 115) 100%);
+}
+
+.card-color-4::before {
+    background: linear-gradient(43deg, rgb(28, 28, 247) 0%, rgb(9, 215, 230) 46%, rgb(0, 255, 115) 100%);
+}
+
+
+
+.card-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 90px;
+}
+
+.prompt {
+    text-align: center;
+    bottom: 5px;
+    left: 12px;
+    z-index: 20;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 300ms ease-in-out-out;
+    position: absolute;
+    color: rgb(255, 255, 255);
+}
+
+.prompt-1 {
+    left: 50px;
+}
+
+.prompt-2 {
+    left: 60px;
+}
+
+.prompt-3 {
+    left: 27px;
+}
+
+.prompt-4 {
+    left: 85px;
+}
+
+.tracker {
+    position: absolute;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+}
+
+.tracker:hover {
+    cursor: pointer;
+}
+
+.tracker:hover~#card #prompt {
+    opacity: 1;
+}
+
+.tracker:hover~#card {
+    transition: 300ms;
+    filter: brightness(1.1);
+}
+
+.container:hover #card::before {
+    transition: 200ms;
+    content: '';
+    opacity: 80%;
+}
+
+.canvas {
+    perspective: 800px;
+    inset: 0;
+    z-index: 200;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "tr-1 tr-2 tr-3 tr-4 tr-5"
+        "tr-6 tr-7 tr-8 tr-9 tr-10"
+        "tr-11 tr-12 tr-13 tr-14 tr-15"
+        "tr-16 tr-17 tr-18 tr-19 tr-20"
+        "tr-21 tr-22 tr-23 tr-24 tr-25";
+}
+
+.tr-1 {
+    grid-area: tr-1;
+}
+
+.tr-2 {
+    grid-area: tr-2;
+}
+
+.tr-3 {
+    grid-area: tr-3;
+}
+
+.tr-4 {
+    grid-area: tr-4;
+}
+
+.tr-5 {
+    grid-area: tr-5;
+}
+
+.tr-6 {
+    grid-area: tr-6;
+}
+
+.tr-7 {
+    grid-area: tr-7;
+}
+
+.tr-8 {
+    grid-area: tr-8;
+}
+
+.tr-9 {
+    grid-area: tr-9;
+}
+
+.tr-10 {
+    grid-area: tr-10;
+}
+
+.tr-11 {
+    grid-area: tr-11;
+}
+
+.tr-12 {
+    grid-area: tr-12;
+}
+
+.tr-13 {
+    grid-area: tr-13;
+}
+
+.tr-14 {
+    grid-area: tr-14;
+}
+
+.tr-15 {
+    grid-area: tr-15;
+}
+
+.tr-16 {
+    grid-area: tr-16;
+}
+
+.tr-17 {
+    grid-area: tr-17;
+}
+
+.tr-18 {
+    grid-area: tr-18;
+}
+
+.tr-19 {
+    grid-area: tr-19;
+}
+
+.tr-20 {
+    grid-area: tr-20;
+}
+
+.tr-21 {
+    grid-area: tr-21;
+}
+
+.tr-22 {
+    grid-area: tr-22;
+}
+
+.tr-23 {
+    grid-area: tr-23;
+}
+
+.tr-24 {
+    grid-area: tr-24;
+}
+
+.tr-25 {
+    grid-area: tr-25;
+}
+
+.tr-1:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(20deg) rotateY(-10deg) rotateZ(0deg);
+}
+
+.tr-2:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(20deg) rotateY(-5deg) rotateZ(0deg);
+}
+
+.tr-3:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.tr-4:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(20deg) rotateY(5deg) rotateZ(0deg);
+}
+
+.tr-5:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(20deg) rotateY(10deg) rotateZ(0deg);
+}
+
+.tr-6:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg);
+}
+
+.tr-7:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(10deg) rotateY(-5deg) rotateZ(0deg);
+}
+
+.tr-8:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.tr-9:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(10deg) rotateY(5deg) rotateZ(0deg);
+}
+
+.tr-10:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(10deg) rotateY(10deg) rotateZ(0deg);
+}
+
+.tr-11:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(0deg) rotateY(-10deg) rotateZ(0deg);
+}
+
+.tr-12:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(0deg) rotateY(-5deg) rotateZ(0deg);
+}
+
+.tr-13:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.tr-14:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(0deg) rotateY(5deg) rotateZ(0deg);
+}
+
+.tr-15:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(0deg) rotateY(10deg) rotateZ(0deg);
+}
+
+.tr-16:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-10deg) rotateY(-10deg) rotateZ(0deg);
+}
+
+.tr-17:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-10deg) rotateY(-5deg) rotateZ(0deg);
+}
+
+.tr-18:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-10deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.tr-19:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-10deg) rotateY(5deg) rotateZ(0deg);
+}
+
+.tr-20:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-10deg) rotateY(10deg) rotateZ(0deg);
+}
+
+.tr-21:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-20deg) rotateY(-10deg) rotateZ(0deg);
+}
+
+.tr-22:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-20deg) rotateY(-5deg) rotateZ(0deg);
+}
+
+.tr-23:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.tr-24:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-20deg) rotateY(5deg) rotateZ(0deg);
+}
+
+.tr-25:hover~#card {
+    transition: 125ms ease-in-out;
+    transform: rotateX(-20deg) rotateY(10deg) rotateZ(0deg);
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
