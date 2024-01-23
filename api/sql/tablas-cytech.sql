@@ -1,3 +1,5 @@
+-- docker exec -it cytech-mysql mysql -uroot -p
+
 CREATE TABLE usuario (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(255) NOT NULL,

@@ -154,7 +154,7 @@ router.get('/perfil', verificarToken, (req, res) => {
 });
 
 // Ruta para crear un nuevo proyecto
-app.post('/api/crear-proyecto', (req, res) => {
+router.post('/api/crear-proyecto', (req, res) => {
   const nuevoProyecto = req.body;
 
   // Insertar el nuevo proyecto en la base de datos

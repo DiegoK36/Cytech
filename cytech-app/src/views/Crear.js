@@ -1,8 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 import '../css/Crear.css';
 
 const Crear = () => {
+
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (categoria) => {
+    setFormData({ ...formData, categoria });
+  };
+
+  useEffect(() => {
+    const hasToken = !!localStorage.getItem('token');
+
+    if (!hasToken) {
+      navigate('/login');
+    }
+  }, [navigate]);
+
   const [formData, setFormData] = useState({
     nombre: '',
     descripcion: '',
@@ -16,6 +32,7 @@ const Crear = () => {
     youtube: '',
     facebook: '',
   });
+
   const [showErrors, setShowErrors] = useState(false);
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
@@ -71,11 +88,11 @@ const Crear = () => {
   };
 
   const handleInputChange = (e) => {
-    const { name, value, type } = e.target;
+    const { name, value, type, files } = e.target;
     let error = '';
 
     if (type === 'file') {
-      const file = e.target.files[0];
+      const file = files[0];
       error = validateInput(name, file, type);
       setFormData({ ...formData, [name]: file });
     } else {
@@ -86,23 +103,56 @@ const Crear = () => {
     setErrors({ ...errors, [name]: error });
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setShowErrors(true);
 
     if (Object.values(errors).some(error => error !== '')) {
-      return; // Exit if there are validation errors
+      return; // Salir si hay errores de validación
     }
 
+    const data = new FormData();
+    Object.keys(formData).forEach(key => {
+      if (key === 'imagen' && formData[key]) {
+        data.append(key, formData[key], formData[key].name);
+      } else {
+        data.append(key, formData[key]);
+      }
+    });
+
     try {
-      const response = await Axios.post('http://localhost:3001/api/crear-proyecto', formData);
-      setSuccessMessage('Proyecto guardado con éxito');
-      console.log('Proyecto guardado con éxito:', response.data);
+      const response = await Axios.post('http://localhost:3001/api/crear-proyecto', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
+      if (response.status === 200) {
+        setSuccessMessage('Proyecto guardado con éxito');
+        setFormData({
+          nombre: '',
+          descripcion: '',
+          presupuesto: '',
+          moneda: 'USD',
+          imagen: null,
+          categoria: '',
+          fechaNacimiento: '',
+          email: '',
+          instagram: '',
+          youtube: '',
+          facebook: '',
+        });
+        setShowErrors(false);
+      } else {
+        setErrors({ api: 'Error al guardar el proyecto' });
+      }
     } catch (error) {
       setErrors({ api: 'Error al guardar el proyecto' });
       console.error('Error al guardar el proyecto:', error);
     }
   };
+
   return (
     <div className='crear-body'>
       <div className='volver-container1'>
@@ -141,10 +191,34 @@ const Crear = () => {
               <div className="input-group">
                 <label htmlFor="categoria">Categoría <span className="required">*</span></label>
                 <div className="button-container">
-                  <button type='button' className='neurotecnologia-button'>Neurotecnología</button>
-                  <button type='button' className='protesis-button'>Prótesis</button>
-                  <button type='button' className='medicina-button'>Medicina</button>
-                  <button type='button' className='otros-button'>Otros</button>
+                  <button
+                    type='button'
+                    className={`neurotecnologia-button ${formData.categoria === 'Neurotecnologia' ? 'selected' : ''}`}
+                    onClick={() => handleCategoryClick('Neurotecnologia')}
+                  >
+                    Neurotecnología
+                  </button>
+                  <button
+                    type='button'
+                    className={`protesis-button ${formData.categoria === 'Protesis' ? 'selected' : ''}`}
+                    onClick={() => handleCategoryClick('Protesis')}
+                  >
+                    Prótesis
+                  </button>
+                  <button
+                    type='button'
+                    className={`medicina-button ${formData.categoria === 'IA' ? 'selected' : ''}`}
+                    onClick={() => handleCategoryClick('IA')}
+                  >
+                    IAs
+                  </button>
+                  <button
+                    type='button'
+                    className={`otros-button ${formData.categoria === 'Salud' ? 'selected' : ''}`}
+                    onClick={() => handleCategoryClick('Salud')}
+                  >
+                    Salud
+                  </button>
                 </div>
               </div>
 
@@ -153,7 +227,7 @@ const Crear = () => {
             <div className='column'>
               <div className="input-group">
                 <label htmlFor="fechaNacimiento">Fecha Límite del Proyecto <span className="required">*</span></label>
-                <input type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="DD/MM/AAAA" />
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="DD/MM/AAAA" onChange={handleInputChange} value={formData.fechaNacimiento} />
               </div>
               <div className="input-group">
                 <label htmlFor="mail">Correo <span className="required">*</span></label>
@@ -161,24 +235,20 @@ const Crear = () => {
               </div>
               <div className="input-group">
                 <label htmlFor="url">Instagram</label>
-                <input type="url" name="url" placeholder="Introduzca la URL de su Instagram" />
+                <input type="url" name="instagram" placeholder="Introduzca la URL de su Instagram" onChange={handleInputChange} value={formData.instagram} />
               </div>
               <div className="input-group">
                 <label htmlFor="url">YouTube</label>
-                <input type="url" name="url" placeholder="Introduzca la URL de su YouTube" />
+                <input type="url" name="youtube" placeholder="Introduzca la URL de su YouTube" onChange={handleInputChange} value={formData.youtube} />
               </div>
               <div className="input-group">
                 <label htmlFor="url">Facebook</label>
-                <input type="url" name="url" placeholder="Introduzca la URL de su Facebook" />
+                <input type="url" name="facebook" placeholder="Introduzca la URL de su Facebook" onChange={handleInputChange} value={formData.facebook} />
               </div>
             </div>
           </form>
         </div>
-        <div className="card1" id="card1">
-          <div className="content">
-            <span onClick={handleSubmit}>Crear Proyecto</span>
-          </div>
-        </div>
+            <button type="submit" className='bn634-hover bn34'>Crear mi Proyecto</button>
       </div>
       {showErrors && (
         <div className={`error-container ${Object.keys(errors).length > 0 ? 'visible' : ''}`}>
