@@ -105,12 +105,15 @@ const Crear = () => {
   };
   return (
     <div className='crear-body'>
-      <div className='volver-container1'>
-        <a href="/">
-        </a>
-      </div>
       <div className="crear-container">
+        <div className='volver-container'>
+            <a href="/">
+              <svg role="presentation" aria-hidden="true" viewBox="0 0 28 28" className='volver'>
+                <path d="M11.5 25.2c1.1 0 1.8-.8 1.8-1.7 0-.5-.2-1-.6-1.3L9.5 19 6 15.6l3.2.2h16.6c1.1 0 1.9-.7 1.9-1.8s-.8-1.8-1.9-1.8H9.2l-3.2.2 3.6-3.3 3.2-3.2c.3-.3.6-.8.6-1.3 0-1-.7-1.7-1.8-1.7-.4 0-.9.2-1.3.6L1 12.6c-.4.4-.6.9-.6 1.4s.2 1 .6 1.3l9.3 9.3c.3.4.8.6 1.2.6z" fill='white'></path>
+              </svg>
+            </a>
         <h2> Crea un nuevo <span className='degradado'>Proyecto</span></h2>
+          </div>
         <div>
           <form className="crear-form">
             <div className='column'>
@@ -174,7 +177,7 @@ const Crear = () => {
             </div>
           </form>
         </div>
-        <div className="card1" id="card1">
+        <div className="bn634-hover bn34">
           <div className="content">
             <span onClick={handleSubmit}>Crear Proyecto</span>
           </div>

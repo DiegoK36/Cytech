@@ -45,12 +45,7 @@ const Crear = () => {
             </div>
           </div>
           
-        <button className='card1'>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span> Financiar Proyecto
-        </button>
+        <button className='bn634-hover bn34'>Financiar Proyecto</button>
         </div>
         </div>
     
