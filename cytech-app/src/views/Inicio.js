@@ -80,6 +80,9 @@ const Inicio = () => {
     const handleClickCategory = () => {
         window.location.href = '/categorias';
     };
+    const handleClickCreate = () => {
+        window.location.href = '/crear';
+    };
     return (
         <>
             {hasToken ? <NavbarUser /> : <Navbar />} {/* Muestra NavbarUser si hay token, de lo contrario, muestra el Navbar normal */}
@@ -91,7 +94,7 @@ const Inicio = () => {
                         <p>Descubre y financia los proyectos más innovadores en el ámbito de la tecnología y la medicina.</p>
                         <div className="hero-buttons">
                             <button className="bn632-hover bn23" onClick={handleClickCategory}>Explorar Proyectos</button>
-                            <button className="bn3">Comenzar un Proyecto</button>
+                            <button className="bn3" onClick={handleClickCreate}>Comenzar un Proyecto</button>
                         </div>
                     </section>
                 </div>

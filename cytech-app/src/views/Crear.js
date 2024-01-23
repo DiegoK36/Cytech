@@ -169,11 +169,11 @@ const Crear = () => {
             <div className='column'>
               <div className="input-group">
                 <label htmlFor="nombre">Nombre <span className="required">*</span></label>
-                <input type="text" name="nombre" placeholder="Introduzca el nombre del proyecto" onChange={handleInputChange} value={formData.nombre} />
+                <input type="text" name="nombre" placeholder="Introduzca el nombre del proyecto" onChange={handleInputChange} value={formData.nombre} className='input-size'/>
               </div>
               <div className="input-group">
                 <label htmlFor="descripcion">Descripción <span className="required">*</span></label>
-                <textarea name="descripcion" placeholder="Introduzca una descripción del proyecto" onChange={handleInputChange} value={formData.descripcion} />
+                <input name="descripcion" placeholder="Introduzca una descripción del proyecto" onChange={handleInputChange} value={formData.descripcion} />
               </div>
               <div className="input-group">
                 <label htmlFor='presupuesto'>Presupuesto <span className="required">*</span></label>
