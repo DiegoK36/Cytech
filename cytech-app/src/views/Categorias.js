@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CTA from '../components/CTA';
 import TypingEffect from '../components/TypingEffect';
-import NeuroSync from '../assets/NeuroSync.png';
 import cat1 from '../assets/cat1.png'
 import cat2 from '../assets/cat2.png'
 import cat3 from '../assets/cat3.png'
@@ -14,114 +13,7 @@ const staticText = "Contribuye en Proyectos sobre ";
 const words = ["Neurotecnología", "Tratamientos IA", "Prótesis Inteligentes", "Salud Digital"];
 const colors = ["#00bbff", "#ff7700", "#00FF00", "#00FF00"];
 
-<<<<<<< HEAD
-=======
-const items = [
-    {
-        imgUrl: cerebro,
-        title: 'Neurotecnología',
-    },
-    {
-        imgUrl: brazo,
-        title: 'Prótesis',
-    },
-    {
-        imgUrl: medicina,
-        title: 'Medicina',
-    },
-    {
-        imgUrl: mas,
-        title: 'Otros',
-    },
-];
-const proyecto = [
-    {
-        imgUrl: NeuroSync,
-        title: 'NeuroSync - Neurorehabilitación',
-        category_class: 'neurotecnologia',
-        category: 'Neurotecnología',
-        description: 'NeuroSync es un innovador sistema de realidad virtual que acelera la recuperación de pacientes con lesiones cerebrales.'
-    },
-    {
-        imgUrl: CardioNet,
-        title: 'CardioNet - Monitoreo Cardíaco',
-        category_class: 'otro',
-        category: 'Otros',
-        description: 'CardioNet es un dispositivo portátil que proporciona monitoreo cardíaco en tiempo real utilizando inteligencia artificial.'
-    },
-    {
-        imgUrl: SkinScan,
-        title: 'SkinScan - Diagnóstico de Piel',
-        category_class: 'otro',
-        category: 'Otros',
-        description: 'SkinScan es una aplicación móvil avanzada que utiliza el aprendizaje automático para analizar y diagnosticar una variedad de condiciones de la piel.'
-    },
-    {
-        imgUrl: MediPrint,
-        title: 'MediPrint - Prótesis en 3D',
-        category_class: 'protesis',
-        category: 'Prótesis',
-        description: 'MediPrint revoluciona el campo de las prótesis con su tecnología de impresión 3D, ofreciendo soluciones personalizadas y de bajo costo.'
-    },
-    {
-        imgUrl: OncoTech,
-        title: 'OncoTech - Genóma del Cáncer',
-        category_class: 'medicina',
-        category: 'Medicina',
-        description: 'OncoTech es una plataforma de análisis genómico que proporciona una comprensión profunda de la genética del cáncer.'
-    },
-    {
-        imgUrl: NeuroSync,
-        title: 'NeuroSync - Neurorehabilitación',
-        category_class: 'neurotecnologia',
-        category: 'Neurotecnología',
-        description: 'NeuroSync es un innovador sistema de realidad virtual que acelera la recuperación de pacientes con lesiones cerebrales.'
-    },
-    {
-        imgUrl: CardioNet,
-        title: 'CardioNet - Monitoreo Cardíaco',
-        category_class: 'otro',
-        category: 'Otros',
-        description: 'CardioNet es un dispositivo portátil que proporciona monitoreo cardíaco en tiempo real utilizando inteligencia artificial.'
-    },
-    {
-        imgUrl: SkinScan,
-        title: 'SkinScan - Diagnóstico de Piel',
-        category_class: 'otro',
-        category: 'Otros',
-        description: 'SkinScan es una aplicación móvil avanzada que utiliza el aprendizaje automático para analizar y diagnosticar una variedad de condiciones de la piel.'
-    },
-    {
-        imgUrl: MediPrint,
-        title: 'MediPrint - Prótesis en 3D',
-        category_class: 'protesis',
-        category: 'Prótesis',
-        description: 'MediPrint revoluciona el campo de las prótesis con su tecnología de impresión 3D, ofreciendo soluciones personalizadas y de bajo costo.'
-    },
-    {
-        imgUrl: OncoTech,
-        title: 'OncoTech - Genóma del Cáncer',
-        category_class: 'medicina',
-        category: 'Medicina',
-        description: 'OncoTech es una plataforma de análisis genómico que proporciona una comprensión profunda de la genética del cáncer.'
-    },
-];
->>>>>>> 7824f2aa1e97586b9b247432966f360be774d8f5
 const Categorias = () => {
-    const [activeCategoria, setActiveCategoria] = useState(null);
-    const [filteredProyectos, setFilteredProyectos] = useState(proyecto);
-
-    const handleCategoriaClick = (categoria) => {
-        setActiveCategoria(categoria);
-
-        // Aplica el filtro o restablece si la categoría es null
-        setFilteredProyectos(
-            categoria
-                ? proyecto.filter((proyecto) => proyecto.category === categoria)
-                : proyecto
-        );
-    };
-
 
     // Verifica si existe un token en el almacenamiento local
     const hasToken = !!localStorage.getItem('token');
@@ -185,7 +77,6 @@ const Categorias = () => {
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
                         <div className="card-container">
                             <div className="container noselect">
                                 <div className="canvas">
@@ -292,18 +183,6 @@ const Categorias = () => {
                             </div>
                         </div>
                     </div>
-=======
-                    </section>
-                </div>
-                    <div className="section-title-container">
-                    <h3 className="section-title">Categorías</h3>
-                    </div>
-                    <Categoria items={items} onCategoriaClick={handleCategoriaClick} />
-                    <div className="section-title-container">
-                    <h3 className="section-title">Proyectos</h3>
-                    </div>
-                    <Proyecto proyecto={filteredProyectos} />
->>>>>>> 7824f2aa1e97586b9b247432966f360be774d8f5
                     <CTA />
                 </main>
                 <Footer />
