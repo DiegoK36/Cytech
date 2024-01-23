@@ -41,12 +41,20 @@
 }
 
 .bn634-hover {
-  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: normal;
   font-size: 1rem;
   color: #fff;
   cursor: pointer;
   padding: 10px 20px;
+<<<<<<< HEAD
   text-align: center;
+=======
+  text-align:center;
+  align-items: center;
+>>>>>>> 7824f2aa1e97586b9b247432966f360be774d8f5
   border: none;
   background-size: 300% 100%;
   border-radius: 5px;
@@ -85,6 +93,7 @@ input {
 .input-row {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -155,7 +164,11 @@ label {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
+<<<<<<< HEAD
   border: 1px solid rgba(0, 254, 255, 1);
+=======
+  border: 1px solid rgba(0,255,255,1); 
+>>>>>>> 7824f2aa1e97586b9b247432966f360be774d8f5
   background-color: transparent;
   color: #cccccc;
 }

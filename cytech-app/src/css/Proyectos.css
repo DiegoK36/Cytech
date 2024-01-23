@@ -41,7 +41,6 @@
 
 .proyectos-item h3 {
     margin-top: 0px;
-    text-align: center;
     font-weight: bold;
     font-size: 1.2em;
     margin-bottom: 0;
@@ -55,7 +54,7 @@
 
 .proyectos-item p {
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0 15px;
 }
 
