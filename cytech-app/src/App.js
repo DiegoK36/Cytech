@@ -6,6 +6,7 @@ import Login from './views/Login';
 import Categorias from './views/Categorias';
 import Crear from './views/Crear';
 import Usuario from './views/Usuario';
+import Proyecto from './views/Proyecto';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/categorias' element={<Categorias />} />
           <Route path='/crear' element={<Crear />} />
           <Route path='/usuario' element={<Usuario />} />
+          <Route path='/proyecto' element={<Proyecto />} />
         </Routes>
       </div>
     </Router>
