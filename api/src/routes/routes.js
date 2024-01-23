@@ -153,4 +153,20 @@ router.get('/perfil', verificarToken, (req, res) => {
   });
 });
 
+// Ruta para crear un nuevo proyecto
+app.post('/api/crear-proyecto', (req, res) => {
+  const nuevoProyecto = req.body;
+
+  // Insertar el nuevo proyecto en la base de datos
+  db.query('INSERT INTO proyecto SET ?', nuevoProyecto, (error, results) => {
+    if (error) {
+      console.error('Error al crear el proyecto: ' + error.message);
+      res.status(500).json({ error: 'Error al crear el proyecto' });
+    } else {
+      console.log('Proyecto creado con éxito, ID:', results.insertId);
+      res.status(201).json({ mensaje: 'Proyecto creado con éxito', proyectoId: results.insertId });
+    }
+  });
+});
+
 module.exports = router;
