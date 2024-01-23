@@ -1,64 +1,90 @@
-.userImage{
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-}
-
-.divider{
+.img-container {
     display: flex;
-    flex-direction: row;
     width: 100%;
-    background-color: #1a1a1a;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    
 }
 
-.button-user{
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
+.profile-img {
+    border-radius: 50%;
+    border: 1px solid rgba(0, 255, 255, 1);
+    width: 200px;
+    height: 200px;
     padding: 5px;
-    color: white;
-    background-color: #1a1a1a;
-    border-radius: 50px;
-    border: 1px solid rgb(0,255,255);
-    transition: ease-in-out 0.4s;
+    object-fit: contain; /* Add this line */
+}
+.volver-container2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 20px 20px;
+  flex-wrap: wrap;
+  max-width: 1000px;
 }
 
-.button-user:hover{
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    padding: 5px;
-    color: #1a1a1a;
-    background-color: rgb(0,255,255)    ;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    scale: 1.1;
+.edit-form input {
+  width: calc(100% - 20px);
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,254,255,1) ;
+  background-color: transparent;
 }
 
-.button-user-negative{
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    padding: 5px;
-    color: white;
-    background-color: #1a1a1a;
-    border-radius: 50px;
-    border: 1px solid rgb(255, 0, 0);
-    transition: ease-in-out 0.4s;
+.icon{
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
 }
 
-.button-user-negative:hover{
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    padding: 5px;
-    color: #1a1a1a;
-    background-color: rgb(255, 0, 0)    ;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    scale: 1.1;
+.bn635-hover {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align:center;
+  align-items: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 5px;
+  transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn635-hover:hover {
+  background-position: 100% 0;
+  transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  box-shadow: 0 4px 15px 0 rgba(0, 255, 242, 0);
+  transition: all .4s ease-in-out;
+}
+
+.bn635-hover:focus {
+  outline: none;
+}
+
+.bn635-hover.bn35 {
+  background-image: linear-gradient(
+    to right,
+    #ff0000,
+    #ff8800,
+    #ff8800,
+    #ff0000
+  );
+  transform: all .4s ease-in-out;
 }
