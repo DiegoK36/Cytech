@@ -149,7 +149,7 @@ p {
 
 
 .card-container {
-    flex: 0 0 auto;
+    flex: center;
     text-align: center;
 }
 
@@ -530,4 +530,33 @@ p {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.publish-project-section {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    margin-top: 30px;
+    border-top: 1px solid #dee2e6;
+}
+
+.publish-project-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.publish-project-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.publish-project-button:hover {
+    background-color: #0056b3;
 }

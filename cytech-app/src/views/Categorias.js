@@ -30,6 +30,10 @@ const Categorias = () => {
         return 'translateX(0px)';
     };
 
+    const redirectToPublishPage = () => {
+        window.location.href = '/crear'; // Replace '/publish' with your target URL
+    };
+
     return (
         <>
             {hasToken ? <NavbarUser /> : <Navbar />} {/* Muestra NavbarUser si hay token, de lo contrario, muestra el Navbar normal */}
@@ -71,8 +75,8 @@ const Categorias = () => {
                                     <div className="tracker tr-24"></div>
                                     <div className="tracker tr-25"></div>
                                     <div id="card" className="card card-color-1">
-                                            <img src={cat1} alt="Imagen de Neurotecnología" className="card-image" />
-                                            <p className="prompt prompt-1">Neurotecnología</p>
+                                        <img src={cat1} alt="Imagen de Neurotecnología" className="card-image" />
+                                        <p className="prompt prompt-1">Neurotecnología</p>
                                     </div>
                                 </div>
                             </div>
@@ -106,8 +110,8 @@ const Categorias = () => {
                                     <div className="tracker tr-24"></div>
                                     <div className="tracker tr-25"></div>
                                     <div id="card" className="card card-color-2">
-                                            <img src={cat2} alt="Imagen de Neurotecnología" className="card-image" />
-                                            <p className="prompt prompt-2">Tratamientos IA</p>
+                                        <img src={cat2} alt="Imagen de Neurotecnología" className="card-image" />
+                                        <p className="prompt prompt-2">Tratamientos IA</p>
                                     </div>
                                 </div>
                             </div>
@@ -182,6 +186,11 @@ const Categorias = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    {/* New section for publishing projects */}
+                    <div className="publish-section">
+                        <h2>¿Deseas publicar tu propio Proyecto?</h2>
+                        <button onClick={redirectToPublishPage}>Empieza Aquí</button>
                     </div>
                     <CTA />
                 </main>
