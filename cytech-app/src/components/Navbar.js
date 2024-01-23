@@ -50,7 +50,6 @@ function Navbar() {
                 <a href="/"><FontAwesomeIcon icon={faHome} /> Inicio</a>
                 <a href="/categorias"><FontAwesomeIcon icon={faProjectDiagram} /> Proyectos</a>
                 <a href="/"><FontAwesomeIcon icon={faUsers} /> Sobre Nosotros</a>
-                <a href="/"><FontAwesomeIcon icon={faQuestionCircle} /> Soporte</a>
             </div>
 
             {/* Botones de inicio de sesión y registro a la derecha */}

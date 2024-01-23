@@ -3,7 +3,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: auto;
     position: relative;
     width: 100%;
     height: 100vh;
@@ -163,77 +162,100 @@ input::file-selector-button {
 /*css del boton*/
 
 .card1 {
-    width: 100%;
-    height: 44px;
-    background: #171717;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 3px 1px #00000088;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    border-radius: 50px;
+ position: relative;
+ padding: 1em 1.8em;
+ outline: none;
+ border: none;
+ width: 100%;
+ background: #2121217f;
+ color: rgba(0, 255, 255, 1);
+ overflow: hidden;
+ transition: 0.2s;
+ border-radius: 20px;
+ cursor: pointer;
+ font-weight: bold;
 }
 
-.card1 .content {
-    border-radius: 50px;
-    background: #171717;
-    width: calc(100% - 25px);
-    height: 20px;
-    z-index: 1;
-    padding: 10px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card1:hover {
+ box-shadow: 0 0 10px rgba(0, 255, 255, 1), 0 0 25px rgba(0, 255, 255, 1), 0 0 50px rgba(0, 255, 255, 1);
+ transition-delay: 0.6s;
 }
 
-.content::before {
-    opacity: 0;
-    transition: opacity 300ms;
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 300px;
-    border-radius: 50px;
-    position: absolute;
-    filter: blur(50px);
+.card1 span {
+ position: absolute;
 }
 
-.card1:hover .content::before {
-    opacity: 1;
+.card1 span:nth-child(1) {
+ top: 0;
+ left: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 1));
 }
 
-.card1::before {
-    opacity: 0;
-    content: " ";
-    position: absolute;
-    display: block;
-    width: 150%;
-    height: 360px;
-    border-radius: 50px;
-    background: linear-gradient(90deg,
-            transparent,
-            rgba(0, 123, 255, 1),
-            rgba(0, 255, 255, 1),
-            transparent);
-    animation: rotation_9018 5000ms infinite linear;
-    animation-play-state: paused;
+.card1:hover span:nth-child(1) {
+ left: 100%;
+ transition: 0.7s;
 }
 
-.card1:hover::before {
-    opacity: 1;
-    animation-play-state: running;
+.card1 span:nth-child(3) {
+ bottom: 0;
+ right: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 1));
 }
 
-.card1::after {
-    position: absolute;
-    content: " ";
-    display: block;
-    background: #17171733;
-    backdrop-filter: blur(50px);
+.card1:hover span:nth-child(3) {
+ right: 100%;
+ transition: 0.7s;
+ transition-delay: 0.35s;
 }
+
+.card1 span:nth-child(2) {
+ top: -100%;
+ right: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(180deg, transparent, rgba(0, 255, 255, 1));
+}
+
+.card1:hover span:nth-child(2) {
+ top: 100%;
+ transition: 0.7s;
+ transition-delay: 0.17s;
+}
+
+.card1 span:nth-child(4) {
+ bottom: -100%;
+ left: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(360deg, transparent, rgba(0, 255, 255, 1));
+}
+
+.card1:hover span:nth-child(4) {
+ bottom: 100%;
+ transition: 0.7s;
+ transition-delay: 0.52s;
+}
+
+.card1:active {
+ background: rgba(0, 255, 255, 1);
+ background: linear-gradient(to top right, rgba(0, 255, 255, 1), rgba(0, 255, 255, 1));
+ color: #bfbfbf;
+ box-shadow: 0 0 8px rgba(0, 255, 255, 1), 0 0 8px rgba(0, 255, 255, 1), 0 0 8px rgba(0, 255, 255, 1);
+ transition: 0.1s;
+}
+
+.card1:active span:nth-child(1) 
+span:nth-child(2) 
+span:nth-child(2) 
+span:nth-child(2) {
+ transition: none;
+ transition-delay: none;
+}
+
 
 @keyframes rotation_9018 {
     0% {
