@@ -78,8 +78,10 @@ function NavbarUser() {
             <div className="navbar-user">
                 {user && (
                     <>
+                    <a href="/usuario">
                         <img src={user.profilePictureURL} alt="Perfil" className="navbar-logo-2" />
                         <span className="navbar-user">{user.username}</span>
+                    </a>
                     </>
                 )}
             </div>

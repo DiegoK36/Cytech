@@ -154,7 +154,7 @@ const Crear = () => {
   };
 
   return (
-    <div className='crear-body'>
+    <div className='register-background'>
       <div className="crear-container">
         <div className='volver-container'>
             <a href="/">
