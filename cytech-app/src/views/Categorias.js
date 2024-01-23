@@ -187,10 +187,14 @@ const Categorias = () => {
                             </div>
                         </div>
                     </div>
-                    {/* New section for publishing projects */}
-                    <div className="publish-section">
-                        <h2>¿Deseas publicar tu propio Proyecto?</h2>
-                        <button onClick={redirectToPublishPage}>Empieza Aquí</button>
+                    <div className="hero-container">
+                        <section className="hero" style={{ transform: getTransformValue() }}>
+                            <h2>¿Deseas publicar tu propio Proyecto?</h2>
+                            <p>¡Publica tu idea de proyecto y logra una fuente estable de financiamiento!.</p>
+                            <div className="hero-buttons">
+                                <button className="bn3" onClick={redirectToPublishPage}>Comenzar un Proyecto</button>
+                            </div>
+                        </section>
                     </div>
                     <CTA />
                 </main>
