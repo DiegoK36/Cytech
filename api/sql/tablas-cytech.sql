@@ -36,7 +36,7 @@ CREATE TABLE proyecto (
 );
 
 INSERT INTO usuario (nombre, apellido, fechaNacimiento, email, telefono, username, passwd, provincia, codigoPostal, terminos, profilePictureURL)
-VALUES ('Administrador', 'Admin', '1990-01-01', 'admin@example.com', '1234567890', 'admin', 'pass', 'Provincia', '12345', 1, 'admin.jpg');
+VALUES ('Administrador', 'Admin', '1990-01-01', 'admin@example.com', '1234567890', 'admin', 'password123', 'Provincia', '12345', 1, 'https://cdn.discordapp.com/attachments/1071576440253984838/1198402211093426366/avatar1.png?ex=65bec608&is=65ac5108&hm=ef8754790004aabdb26c9147baa302b723903d8e2d677063214eede76eb57a2f&');
 
 -- Proyecto 1
 INSERT INTO proyecto (nombre, descripcion, presupuesto, moneda, imagen, categoria, fechaLimite, emailContacto, instagram, youtube, facebook, usuario_id)
