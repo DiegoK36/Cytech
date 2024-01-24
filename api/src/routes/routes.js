@@ -183,4 +183,113 @@ router.post('/crear', upload.single('imagen'), (req, res) => {
   });
 });
 
+// Ruta para obtener la URL de la imagen de perfil del usuario
+router.get('/imagen-perfil/:userId', (req, res) => {
+  const userId = req.params.userId;
+  // Reemplaza con tu consulta SQL para obtener la URL de la imagen de perfil
+  const sql = `SELECT profilePictureURL FROM usuario WHERE id = ?`;
+
+  db.query(sql, [userId], (err, result) => {
+    if (err) {
+      console.error('Error al obtener la imagen de perfil:', err);
+      res.status(500).json({ error: 'Error al obtener la imagen de perfil' });
+      return;
+    }
+
+    if (result.length === 0) {
+      res.status(404).json({ error: 'Usuario no encontrado' });
+      return;
+    }
+
+    // Devuelve la URL de la imagen de perfil como respuesta
+    res.json({ profileImage: result[0].profilePictureURL });
+  });
+});
+
+// Ruta para eliminar la cuenta del usuario y sus proyectos asociados
+router.delete('/eliminar-cuenta/:userId', (req, res) => {
+  const userId = req.params.userId;
+
+  // Inicia una transacción para garantizar la consistencia de la base de datos
+  db.beginTransaction((err) => {
+    if (err) {
+      console.error('Error al iniciar la transacción:', err);
+      res.status(500).json({ message: 'Error al eliminar la cuenta' });
+      return;
+    }
+
+    // Eliminar los proyectos asociados al usuario
+    const deleteProjectsSql = 'DELETE FROM proyecto WHERE usuario_id = ?';
+
+    db.query(deleteProjectsSql, [userId], (err, result) => {
+      if (err) {
+        console.error('Error al eliminar proyectos:', err);
+        db.rollback(() => {
+          res.status(500).json({ message: 'Error al eliminar la cuenta' });
+        });
+        return;
+      }
+
+      // Eliminar el usuario
+      const deleteUserSql = 'DELETE FROM usuario WHERE id = ?';
+
+      db.query(deleteUserSql, [userId], (err, result) => {
+        if (err) {
+          console.error('Error al eliminar el usuario:', err);
+          db.rollback(() => {
+            res.status(500).json({ message: 'Error al eliminar la cuenta' });
+          });
+          return;
+        }
+
+        // Confirmar la transacción y enviar respuesta exitosa
+        db.commit((err) => {
+          if (err) {
+            console.error('Error al confirmar la transacción:', err);
+            db.rollback(() => {
+              res.status(500).json({ message: 'Error al eliminar la cuenta' });
+            });
+            return;
+          }
+
+          // Borrar el token y el ID del localStorage (en el cliente)
+          res.status(200).json({ message: 'Cuenta eliminada con éxito' });
+        });
+      });
+    });
+  });
+});
+
+// Ruta para cambiar la imagen de perfil del usuario
+router.post('/cambiar-imagen/:userId', upload.single('image'), (req, res) => {
+  const userId = req.params.userId;
+  const imagePath = req.file.path; // Ruta del archivo subido
+
+  // Actualiza la ruta de la imagen de perfil en la base de datos
+  db.query(
+    'UPDATE usuario SET profilePictureURL = ? WHERE id = ?',
+    [imagePath, userId],
+    (err, results) => {
+      if (err) {
+        console.error('Error al actualizar la imagen de perfil:', err);
+        res.status(500).json({ error: 'Error al actualizar la imagen de perfil' });
+        return;
+      }
+
+      if (results.affectedRows === 0) {
+        res.status(404).json({ error: 'Usuario no encontrado' });
+        return;
+      }
+
+      // Devuelve la URL de la nueva imagen de perfil como respuesta
+      const imageUrl = `/uploads/${userId}${path.extname(req.file.originalname)}`;
+      res.json({ profileImage: imageUrl });
+
+      // Cierra la conexión a la base de datos
+      connection.end();
+    }
+  );
+});
+
+
 module.exports = router;

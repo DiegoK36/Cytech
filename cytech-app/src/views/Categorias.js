@@ -187,6 +187,8 @@ const Categorias = () => {
                             </div>
                         </div>
                     </div>
+                    <br/>
+                    <br/>
                     <div className="hero-container">
                         <section className="hero" style={{ transform: getTransformValue() }}>
                             <h2>¿Deseas publicar tu propio <span className="title">Proyecto?</span></h2>
@@ -196,6 +198,10 @@ const Categorias = () => {
                             </div>
                         </section>
                     </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <CTA />
                 </main>
                 <Footer />
