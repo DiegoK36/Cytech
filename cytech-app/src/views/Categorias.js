@@ -31,7 +31,7 @@ const Categorias = () => {
     };
 
     const redirectToPublishPage = () => {
-        window.location.href = '/crear'; // Replace '/publish' with your target URL
+        window.location.href = '/crear';
     };
 
     return (
@@ -189,7 +189,7 @@ const Categorias = () => {
                     </div>
                     <div className="hero-container">
                         <section className="hero" style={{ transform: getTransformValue() }}>
-                            <h2>¿Deseas publicar tu propio Proyecto?</h2>
+                            <h2>¿Deseas publicar tu propio <span className="title">Proyecto?</span></h2>
                             <p>¡Publica tu idea de proyecto y logra una fuente estable de financiamiento!.</p>
                             <div className="hero-buttons">
                                 <button className="bn3" onClick={redirectToPublishPage}>Comenzar un Proyecto</button>

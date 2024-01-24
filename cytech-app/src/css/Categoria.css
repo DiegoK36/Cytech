@@ -143,7 +143,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 80px;
     text-align: center;
 }
 
@@ -160,6 +160,7 @@ p {
     width: 330px;
     height: 414px;
     transition: 200ms;
+    margin-bottom: 30px;
 }
 
 #card {
@@ -188,35 +189,35 @@ p {
 
 /* Estilos específicos para cada color de tarjeta */
 .card-color-1 {
-    background: linear-gradient(43deg, rgb(0, 42, 255) 0%, rgb(80, 192, 200)46%, rgb(112, 255, 245) 100%);
+    background: linear-gradient(43deg, #0a3d62 0%, #1e3799 46%, #4a69bd 100%);
 }
 
 .card-color-1::before {
-    background: linear-gradient(43deg, rgb(0, 42, 255) 0%, rgb(80, 192, 200)46%, rgb(112, 255, 245) 100%);
+    background: linear-gradient(43deg, #0a3d62 0%, #1e3799 46%, #4a69bd 100%);
 }
 
 .card-color-2 {
-    background: linear-gradient(43deg, rgb(43, 160, 41) 0%, rgb(255, 225, 0)  46%, rgb(255, 255, 0)  100%);
+    background: linear-gradient(43deg, #0c2461 0%, #4a69bd 46%, #6a89cc 100%);
 }
 
 .card-color-2::before {
-    background: linear-gradient(43deg, rgb(43, 160, 41) 0%, rgb(255, 225, 0)  46%, rgb(255, 255, 0) 100%);
+    background: linear-gradient(43deg, #0c2461 0%, #4a69bd 46%, #6a89cc 100%);
 }
 
 .card-color-3 {
-    background: linear-gradient(43deg, rgb(255, 0, 0)0%, rgb(255, 196, 0) 46%, rgb(255, 196, 0) 100%);
+    background: linear-gradient(43deg, #82ccdd 0%, #60a3bc 46%, #3c6382 100%);
 }
 
 .card-color-3::before {
-    background: linear-gradient(43deg, rgb(255, 0, 0) 0%, rgb(255, 196, 0) 46%, rgb(255, 196, 0) 100%);
+    background: linear-gradient(43deg, #82ccdd 0%, #60a3bc 46%, #3c6382 100%);
 }
 
 .card-color-4 {
-    background: linear-gradient(43deg, rgb(102, 0, 255) 0%, rgb(255, 0, 255) 46%, rgb(255, 0, 255) 100%);
+    background: linear-gradient(43deg, #0e6ba8 0%, #3b9cd1 46%, #6cb2eb 100%);
 }
 
 .card-color-4::before {
-    background: linear-gradient(43deg, rgb(102, 0, 255) 0%, rgb(255, 0, 255) 46%, rgb(255, 0, 255) 100%);
+    background: linear-gradient(43deg, #0e6ba8 0%, #3b9cd1 46%, #6cb2eb 100%);
 }
 
 
@@ -242,19 +243,19 @@ p {
 }
 
 .prompt-1 {
-    left: 50px;
+    left: 45px;
 }
 
 .prompt-2 {
-    left: 60px;
+    left: 55px;
 }
 
 .prompt-3 {
-    left: 27px;
+    left: 20px;
 }
 
 .prompt-4 {
-    left: 85px;
+    left: 75px;
 }
 
 .tracker {

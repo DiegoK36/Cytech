@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Axios from 'axios';
 import '../css/Crear.css';
 
 const Crear = () => {
@@ -10,6 +9,9 @@ const Crear = () => {
   const handleCategoryClick = (categoria) => {
     setFormData({ ...formData, categoria });
   };
+
+  // Recupera el ID de usuario del localStorage
+  const userId = localStorage.getItem('userId');
 
   useEffect(() => {
     const hasToken = !!localStorage.getItem('token');
@@ -26,11 +28,12 @@ const Crear = () => {
     moneda: 'USD',
     imagen: null,
     categoria: '',
-    fechaNacimiento: '',
-    email: '',
+    fechaLimite: '',
+    emailContacto: '',
     instagram: '',
     youtube: '',
     facebook: '',
+    usuario_id: userId,
   });
 
   const [showErrors, setShowErrors] = useState(false);
@@ -54,6 +57,8 @@ const Crear = () => {
       case 'presupuesto':
         if (isNaN(value)) {
           error = 'El presupuesto debe ser un número';
+        } else if (Number(value) > 1000000) { // Asumiendo que el límite es 1 millón
+          error = 'El límite de donación es 1 millón';
         }
         break;
       case 'imagen':
@@ -64,12 +69,12 @@ const Crear = () => {
           }
         }
         break;
-      case 'fechaNacimiento':
+      case 'fechaLimite':
         if (new Date(value) < oneMonthFromNow) {
           error = 'La fecha debe ser de un mes mínimo';
         }
         break;
-      case 'email':
+      case 'emailContacto':
         if (!emailRegex.test(value)) {
           error = 'Formato de Correo Inválido';
         }
@@ -106,10 +111,25 @@ const Crear = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validación final
+    let newErrors = {};
+    Object.keys(formData).forEach(key => {
+      const value = formData[key];
+      const type = key === 'imagen' ? 'file' : 'text';
+      const error = validateInput(key, value, type);
+      if (error) {
+        newErrors[key] = error;
+      }
+    });
+
+    setErrors(newErrors);
     setShowErrors(true);
 
-    if (Object.values(errors).some(error => error !== '')) {
-      return; // Salir si hay errores de validación
+    // Si hay errores, no proceder con el envío
+    if (Object.values(newErrors).some(error => error !== '')) {
+      console.log('Errores de validación presentes.');
+      return;
     }
 
     const data = new FormData();
@@ -122,54 +142,44 @@ const Crear = () => {
     });
 
     try {
-      const response = await Axios.post('http://localhost:3001/api/crear-proyecto', data, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+      const response = await fetch('http://localhost:3001/api/crear', {
+        method: 'POST',
+        body: data // Aquí enviamos el FormData directamente
       });
 
-      if (response.status === 200) {
+      if (response.ok) {
+        const responseData = await response.json(); // O asume que la respuesta es JSON
         setSuccessMessage('Proyecto guardado con éxito');
-        setFormData({
-          nombre: '',
-          descripcion: '',
-          presupuesto: '',
-          moneda: 'USD',
-          imagen: null,
-          categoria: '',
-          fechaNacimiento: '',
-          email: '',
-          instagram: '',
-          youtube: '',
-          facebook: '',
-        });
-        setShowErrors(false);
+        // Restablecer el formulario aquí si es necesario
       } else {
-        setErrors({ api: 'Error al guardar el proyecto' });
+        const errorText = await response.text();
+        console.error('Error en la respuesta del servidor:', errorText);
+        setErrors({ api: 'Formato de datos Erróneo' });
       }
     } catch (error) {
-      setErrors({ api: 'Error al guardar el proyecto' });
       console.error('Error al guardar el proyecto:', error);
+      setErrors({ api: 'Error al guardar el proyecto' });
     }
   };
 
+
   return (
-    <div className='register-background'>
+    <div className='crear-background'>
       <div className="crear-container">
         <div className='volver-container'>
-            <a href="/">
-              <svg role="presentation" aria-hidden="true" viewBox="0 0 28 28" className='volver'>
-                <path d="M11.5 25.2c1.1 0 1.8-.8 1.8-1.7 0-.5-.2-1-.6-1.3L9.5 19 6 15.6l3.2.2h16.6c1.1 0 1.9-.7 1.9-1.8s-.8-1.8-1.9-1.8H9.2l-3.2.2 3.6-3.3 3.2-3.2c.3-.3.6-.8.6-1.3 0-1-.7-1.7-1.8-1.7-.4 0-.9.2-1.3.6L1 12.6c-.4.4-.6.9-.6 1.4s.2 1 .6 1.3l9.3 9.3c.3.4.8.6 1.2.6z" fill='white'></path>
-              </svg>
-            </a>
-        <h2> Crea un nuevo <span className='degradado'>Proyecto</span></h2>
-          </div>
+          <a href="/categorias">
+            <svg role="presentation" aria-hidden="true" viewBox="0 0 28 28" className='volver2'>
+              <path d="M11.5 25.2c1.1 0 1.8-.8 1.8-1.7 0-.5-.2-1-.6-1.3L9.5 19 6 15.6l3.2.2h16.6c1.1 0 1.9-.7 1.9-1.8s-.8-1.8-1.9-1.8H9.2l-3.2.2 3.6-3.3 3.2-3.2c.3-.3.6-.8.6-1.3 0-1-.7-1.7-1.8-1.7-.4 0-.9.2-1.3.6L1 12.6c-.4.4-.6.9-.6 1.4s.2 1 .6 1.3l9.3 9.3c.3.4.8.6 1.2.6z" fill='white'></path>
+            </svg>
+          </a>
+          <h2> Crea un nuevo <span className='degradado'>Proyecto</span></h2>
+        </div>
         <div>
-          <form className="crear-form">
+          <form className="crear-form" onSubmit={handleSubmit}>
             <div className='column'>
               <div className="input-group">
                 <label htmlFor="nombre">Nombre <span className="required">*</span></label>
-                <input type="text" name="nombre" placeholder="Introduzca el nombre del proyecto" onChange={handleInputChange} value={formData.nombre} className='input-size'/>
+                <input type="text" name="nombre" placeholder="Introduzca el nombre del proyecto" onChange={handleInputChange} value={formData.nombre} className='input-size' />
               </div>
               <div className="input-group">
                 <label htmlFor="descripcion">Descripción <span className="required">*</span></label>
@@ -229,12 +239,12 @@ const Crear = () => {
             </div>
             <div className='column'>
               <div className="input-group">
-                <label htmlFor="fechaNacimiento">Fecha Límite del Proyecto <span className="required">*</span></label>
-                <input type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="DD/MM/AAAA" onChange={handleInputChange} value={formData.fechaNacimiento} />
+                <label htmlFor="fechaLimite">Fecha Límite del Proyecto <span className="required">*</span></label>
+                <input type="date" id="fechaLimite" name="fechaLimite" placeholder="DD/MM/AAAA" onChange={handleInputChange} value={formData.fechaLimite} />
               </div>
               <div className="input-group">
                 <label htmlFor="mail">Correo <span className="required">*</span></label>
-                <input type="text" name="email" placeholder="Introduzca su correo electrónico" />
+                <input type="text" name="emailContacto" placeholder="Introduzca su correo electrónico" onChange={handleInputChange} value={formData.emailContacto} />
               </div>
               <div className="input-group">
                 <label htmlFor="url">Instagram</label>
@@ -250,8 +260,8 @@ const Crear = () => {
               </div>
             </div>
           </form>
+          <button type="submit" onClick={handleSubmit} className='bn634-hover bn34'>Crear mi Proyecto</button>
         </div>
-            <button type="submit" className='bn634-hover bn34'>Crear mi Proyecto</button>
       </div>
       {showErrors && (
         <div className={`error-container ${Object.keys(errors).length > 0 ? 'visible' : ''}`}>

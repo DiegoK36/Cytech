@@ -1,13 +1,50 @@
 .crear-body {
     display: flex;
     justify-content: center;
-  position: relative;
-  width: 100%;
-  height: 100vh;  
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.crear-background {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.crear-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/9.png');
+    background-size: cover;
+    background-position: 70% 30%;
+    filter: blur(5px);
+    z-index: 0;
+}
+
+.volver2 {
+    position: relative;
+    right: 145px;
+    width: 23px;
+    height: 23px;
+    margin-bottom: 0px;
+    transition: ease-in-out 0.3s;
+}
+
+.volver2:hover {
+    scale: 1.3;
 }
 
 .volver-container1 {
@@ -15,6 +52,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    bottom: 20px;
 }
 
 .volver-container1 h3 {
@@ -104,16 +142,32 @@ input {
 
 .input-group-special {
     height: 36px;
+    display: flex;
+    align-items: stretch;
+}
+
+/* Añade esto para limpiar los flotantes */
+.crear-form .bn634-hover.bn34 {
+    clear: both;
+    /* Esto asegura que el botón se coloque debajo de las columnas flotantes */
+    width: 100%;
+    /* Hace que el botón ocupe todo el ancho */
+    margin-top: 20px;
+    /* Añade un margen en la parte superior si es necesario */
+    /* Otros estilos para tu botón */
 }
 
 .monedas {
-    height: 37px;
+    position: relative;
+    left: 17px;
+    top: 79px;
+    bottom: 0.1px;
+    height: 35px;
     background: rgba(0, 254, 255, 1);
     overflow-y: auto;
-    padding: 10px;
-    border-radius: 0 5px 5px 0px;
+    padding: 5px;
+    border-radius: 0 4px 5px 0px;
     border: none;
-    margin-left: 3px;
     color: #1a1a1a;
     transform: translate(-53px, -78.5px);
 }
@@ -310,15 +364,15 @@ input::file-selector-button {
     max-width: 300px;
     z-index: 1000;
     opacity: 0;
-  }
-  
-  .error-container.visible {
+}
+
+.error-container.visible {
     display: block;
     animation: fadeInOut 10s ease-in-out;
-  }
-  
-  /* Estilos de Globo de Éxito */
-  .success-container {
+}
+
+/* Estilos de Globo de Éxito */
+.success-container {
     display: none;
     position: fixed;
     bottom: 10px;
@@ -332,44 +386,44 @@ input::file-selector-button {
     max-width: 300px;
     z-index: 1000;
     opacity: 0;
-  }
-  
-  .success-container.visible {
+}
+
+.success-container.visible {
     display: block;
     animation: fadeInOut 10s ease-in-out;
-  }
-  
-  @keyframes fadeInOut {
-  
+}
+
+@keyframes fadeInOut {
+
     0%,
     100% {
-      opacity: 0;
+        opacity: 0;
     }
-  
-    10% {
-      opacity: 1;
-    }
-  
-    90% {
-      opacity: 1;
-    }
-  }
-  
-  .error-message {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-  
-  .success-message {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
 
-  .bn34 {
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+}
+
+.error-message {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.success-message {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.bn34 {
     padding: 10px 1px 2px 3px 3px;
     padding-left: 20px;
-  }
+}

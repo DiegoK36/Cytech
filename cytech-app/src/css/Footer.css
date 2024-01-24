@@ -79,6 +79,10 @@
     margin-top: 1rem;
 }
 
+.footer-bottom p {
+  font-size: 14px;
+}
+
 .social-icons a {
     color: #3333336d;
     margin-left: 1.5rem;
@@ -91,4 +95,8 @@ hr {
     height: 0.7px;
     background-color: #cccccc9f;
     margin-bottom: 1rem;
+}
+
+.newsletter-description p {
+  font-size: 14px;
 }

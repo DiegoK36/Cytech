@@ -251,7 +251,7 @@ const Registro = () => {
             <div className="input-group-right">
               <div className="input-group-quarter">
                 <label htmlFor="provincia">Provincia <span className="required">*</span></label>
-                <select name="provincia" onChange={handleChange}>
+                <select name="provincia" className='selector' onChange={handleChange}>
                   <option value="">Seleccione una provincia</option>
                   {provinciasEspaña.map((provincia, index) => (
                     <option key={index} value={provincia.toLowerCase()}>{provincia}</option>

@@ -2,7 +2,9 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const mysql = require('mysql');
 const config = require('config');
+const path = require('path');
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
 const saltRounds = 10;
 
 // Conexión a la base de datos MySQL
@@ -153,18 +155,30 @@ router.get('/perfil', verificarToken, (req, res) => {
   });
 });
 
-// Ruta para crear un nuevo proyecto
-router.post('/api/crear-proyecto', (req, res) => {
-  const nuevoProyecto = req.body;
+// Configura multer para manejar la carga de imágenes
+const storage = multer.diskStorage({
+  destination: './uploads/', // Directorio donde se almacenarán las imágenes
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  },
+});
 
-  // Insertar el nuevo proyecto en la base de datos
-  db.query('INSERT INTO proyecto SET ?', nuevoProyecto, (error, results) => {
-    if (error) {
-      console.error('Error al crear el proyecto: ' + error.message);
+const upload = multer({ storage: storage });
+
+// Ruta para crear un proyecto
+router.post('/crear', upload.single('imagen'), (req, res) => {
+  const { nombre, descripcion, presupuesto, moneda, categoria, fechaLimite, emailContacto, instagram, youtube, facebook, usuario_id } = req.body;
+  const imagen = req.file ? req.file.filename : null;
+
+  // Realiza la inserción en la base de datos
+  const insertQuery = 'INSERT INTO proyecto (nombre, descripcion, presupuesto, moneda, imagen, categoria, fechaLimite, emailContacto, instagram, youtube, facebook, usuario_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  db.query(insertQuery, [nombre, descripcion, presupuesto, moneda, imagen, categoria, fechaLimite, emailContacto, instagram, youtube, facebook, usuario_id], (err, result) => {
+    if (err) {
+      console.error('Error al crear el proyecto:', err);
       res.status(500).json({ error: 'Error al crear el proyecto' });
     } else {
-      console.log('Proyecto creado con éxito, ID:', results.insertId);
-      res.status(201).json({ mensaje: 'Proyecto creado con éxito', proyectoId: results.insertId });
+      console.log('Proyecto creado con éxito');
+      res.status(200).json({ message: 'Proyecto guardado con éxito' });
     }
   });
 });

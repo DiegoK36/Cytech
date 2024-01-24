@@ -165,7 +165,7 @@ label {
   color: #cccccc;
 }
 
-.input-group-quarter select option {
+.input-group-quarter.selector {
   color: black;
 }
 
@@ -442,6 +442,8 @@ h2 .title {
 }
 
 .volver {
+  position: relative;
+  right: 5px;
   width: 20px;
   height: 20px;
   transition: ease-in-out 0.3s;
