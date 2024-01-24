@@ -29,7 +29,7 @@
 }
 
 .barra-donaciones progress {
-    width: 100%; /* La barra de progreso ocupa todo el ancho */
+    width: 95%; /* La barra de progreso ocupa todo el ancho */
     height: 20px; /* Altura de la barra de progreso */
 }
 
@@ -123,4 +123,20 @@
     background-image: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(200, 0, 255) 100%);
     padding: 5px ;
     border-radius: 50px;
+}
+.carrusel-item1 {
+    display: flex;
+    width: calc(100% / 5);
+    margin: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: rgb(26, 26, 26);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.carrusel-item1 a{
+    text-decoration: none;
+    color: white;
 }

@@ -84,7 +84,7 @@ const Proyectos = () => {
                     </div>
                     <div className="carrusel-container2">
                         {items.map((proyecto, index) => (
-                            <div className="carrusel-item" key={index}>
+                            <div className="carrusel-item1" key={index}>
                                 <img src={proyecto.imgUrl} alt={proyecto.title} />
                                 <h3><a href="tu-enlace-aquí">{proyecto.title}</a></h3>
                                 <p>{proyecto.description}</p>
