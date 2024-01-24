@@ -148,7 +148,6 @@ const Crear = () => {
       });
 
       if (response.ok) {
-        const responseData = await response.json(); // O asume que la respuesta es JSON
         setSuccessMessage('Proyecto guardado con éxito');
         // Restablecer el formulario aquí si es necesario
       } else {

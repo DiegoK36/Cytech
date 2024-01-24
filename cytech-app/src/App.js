@@ -7,6 +7,7 @@ import Categorias from './views/Categorias';
 import Crear from './views/Crear';
 import Usuario from './views/Usuario';
 import Proyecto from './views/Proyecto';
+import Proyectos from './views/Proyectos';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/crear' element={<Crear />} />
           <Route path='/usuario' element={<Usuario />} />
           <Route path='/proyecto' element={<Proyecto />} />
+          <Route path="/proyectos" element={<Proyectos />} />
         </Routes>
       </div>
     </Router>

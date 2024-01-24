@@ -24,6 +24,36 @@
 
 }
 
+.barra-donaciones {
+    margin: 10px 0;
+}
+
+.barra-donaciones progress {
+    width: 100%; /* La barra de progreso ocupa todo el ancho */
+    height: 20px; /* Altura de la barra de progreso */
+}
+
+.carrusel-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.btn-ver-mas {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-ver-mas:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
+
 .proyectos-item img {
     width: 100%;
     height: 50%;

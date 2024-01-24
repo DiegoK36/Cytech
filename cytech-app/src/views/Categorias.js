@@ -3,10 +3,12 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CTA from '../components/CTA';
 import TypingEffect from '../components/TypingEffect';
+import { useNavigate } from 'react-router-dom';
 import cat1 from '../assets/cat1.png'
 import cat2 from '../assets/cat2.png'
 import cat3 from '../assets/cat3.png'
 import cat4 from '../assets/cat4.png'
+import { Link } from 'react-router-dom';
 import '../css/Categoria.css';
 
 const staticText = "Contribuye en Proyectos sobre ";
@@ -17,6 +19,7 @@ const Categorias = () => {
 
     // Verifica si existe un token en el almacenamiento local
     const hasToken = !!localStorage.getItem('token');
+    const navigate = useNavigate();
 
     const getTransformValue = () => {
         const displacementFactor = 9; // FACTOR DE DESPLAZAMIENTO
@@ -34,6 +37,14 @@ const Categorias = () => {
         window.location.href = '/crear';
     };
 
+    // En la vista de categorías
+    const handleCategoryClick = (category) => {
+        localStorage.setItem('selectedCategory', category); // Almacena la categoría en el localStorage
+        // Luego, puedes redirigir a la página de proyectos
+        navigate('/proyectos');
+    };
+  
+
     return (
         <>
             {hasToken ? <NavbarUser /> : <Navbar />} {/* Muestra NavbarUser si hay token, de lo contrario, muestra el Navbar normal */}
@@ -46,149 +57,162 @@ const Categorias = () => {
                         </section>
                     </div>
                     <div className="cards-container">
-                        <div className="card-container">
-                            <div className="container noselect">
-                                <div className="canvas">
-                                    <div className="tracker tr-1"></div>
-                                    <div className="tracker tr-2"></div>
-                                    <div className="tracker tr-3"></div>
-                                    <div className="tracker tr-4"></div>
-                                    <div className="tracker tr-5"></div>
-                                    <div className="tracker tr-6"></div>
-                                    <div className="tracker tr-7"></div>
-                                    <div className="tracker tr-8"></div>
-                                    <div className="tracker tr-9"></div>
-                                    <div className="tracker tr-10"></div>
-                                    <div className="tracker tr-11"></div>
-                                    <div className="tracker tr-12"></div>
-                                    <div className="tracker tr-13"></div>
-                                    <div className="tracker tr-14"></div>
-                                    <div className="tracker tr-15"></div>
-                                    <div className="tracker tr-16"></div>
-                                    <div className="tracker tr-17"></div>
-                                    <div className="tracker tr-18"></div>
-                                    <div className="tracker tr-19"></div>
-                                    <div className="tracker tr-20"></div>
-                                    <div className="tracker tr-21"></div>
-                                    <div className="tracker tr-22"></div>
-                                    <div className="tracker tr-23"></div>
-                                    <div className="tracker tr-24"></div>
-                                    <div className="tracker tr-25"></div>
-                                    <div id="card" className="card card-color-1">
-                                        <img src={cat1} alt="Imagen de Neurotecnología" className="card-image" />
-                                        <p className="prompt prompt-1">Neurotecnología</p>
+                        <Link to="/proyectos" onClick={() => handleCategoryClick('Neurotecnologia')}>
+                            <div className="card-container">
+                                <div className="container noselect">
+                                    <div className="canvas">
+                                        <div className="tracker tr-1"></div>
+                                        <div className="tracker tr-2"></div>
+                                        <div className="tracker tr-3"></div>
+                                        <div className="tracker tr-4"></div>
+                                        <div className="tracker tr-5"></div>
+                                        <div className="tracker tr-6"></div>
+                                        <div className="tracker tr-7"></div>
+                                        <div className="tracker tr-8"></div>
+                                        <div className="tracker tr-9"></div>
+                                        <div className="tracker tr-10"></div>
+                                        <div className="tracker tr-11"></div>
+                                        <div className="tracker tr-12"></div>
+                                        <div className="tracker tr-13"></div>
+                                        <div className="tracker tr-14"></div>
+                                        <div className="tracker tr-15"></div>
+                                        <div className="tracker tr-16"></div>
+                                        <div className="tracker tr-17"></div>
+                                        <div className="tracker tr-18"></div>
+                                        <div className="tracker tr-19"></div>
+                                        <div className="tracker tr-20"></div>
+                                        <div className="tracker tr-21"></div>
+                                        <div className="tracker tr-22"></div>
+                                        <div className="tracker tr-23"></div>
+                                        <div className="tracker tr-24"></div>
+                                        <div className="tracker tr-25"></div>
+
+                                        <div id="card" className="card card-color-1">
+                                            <img src={cat1} alt="Imagen de Neurotecnología" className="card-image" />
+                                            <p className="prompt prompt-1">Neurotecnología</p>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
+                        </Link>
+                        <div className="card-container">
+                            <Link to="/proyectos" onClick={() => handleCategoryClick('IA')}>
+                                <div className="container noselect">
+                                    <div className="canvas">
+                                        <div className="tracker tr-1"></div>
+                                        <div className="tracker tr-2"></div>
+                                        <div className="tracker tr-3"></div>
+                                        <div className="tracker tr-4"></div>
+                                        <div className="tracker tr-5"></div>
+                                        <div className="tracker tr-6"></div>
+                                        <div className="tracker tr-7"></div>
+                                        <div className="tracker tr-8"></div>
+                                        <div className="tracker tr-9"></div>
+                                        <div className="tracker tr-10"></div>
+                                        <div className="tracker tr-11"></div>
+                                        <div className="tracker tr-12"></div>
+                                        <div className="tracker tr-13"></div>
+                                        <div className="tracker tr-14"></div>
+                                        <div className="tracker tr-15"></div>
+                                        <div className="tracker tr-16"></div>
+                                        <div className="tracker tr-17"></div>
+                                        <div className="tracker tr-18"></div>
+                                        <div className="tracker tr-19"></div>
+                                        <div className="tracker tr-20"></div>
+                                        <div className="tracker tr-21"></div>
+                                        <div className="tracker tr-22"></div>
+                                        <div className="tracker tr-23"></div>
+                                        <div className="tracker tr-24"></div>
+                                        <div className="tracker tr-25"></div>
+                                        <div id="card" className="card card-color-2">
+                                            <img src={cat2} alt="Imagen de Neurotecnología" className="card-image" />
+                                            <p className="prompt prompt-2">Tratamientos IA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="card-container">
-                            <div className="container noselect">
-                                <div className="canvas">
-                                    <div className="tracker tr-1"></div>
-                                    <div className="tracker tr-2"></div>
-                                    <div className="tracker tr-3"></div>
-                                    <div className="tracker tr-4"></div>
-                                    <div className="tracker tr-5"></div>
-                                    <div className="tracker tr-6"></div>
-                                    <div className="tracker tr-7"></div>
-                                    <div className="tracker tr-8"></div>
-                                    <div className="tracker tr-9"></div>
-                                    <div className="tracker tr-10"></div>
-                                    <div className="tracker tr-11"></div>
-                                    <div className="tracker tr-12"></div>
-                                    <div className="tracker tr-13"></div>
-                                    <div className="tracker tr-14"></div>
-                                    <div className="tracker tr-15"></div>
-                                    <div className="tracker tr-16"></div>
-                                    <div className="tracker tr-17"></div>
-                                    <div className="tracker tr-18"></div>
-                                    <div className="tracker tr-19"></div>
-                                    <div className="tracker tr-20"></div>
-                                    <div className="tracker tr-21"></div>
-                                    <div className="tracker tr-22"></div>
-                                    <div className="tracker tr-23"></div>
-                                    <div className="tracker tr-24"></div>
-                                    <div className="tracker tr-25"></div>
-                                    <div id="card" className="card card-color-2">
-                                        <img src={cat2} alt="Imagen de Neurotecnología" className="card-image" />
-                                        <p className="prompt prompt-2">Tratamientos IA</p>
+                            <Link to="/proyectos" onClick={() => handleCategoryClick('Protesis')}>
+                                <div className="container noselect">
+                                    <div className="canvas">
+                                        <div className="tracker tr-1"></div>
+                                        <div className="tracker tr-2"></div>
+                                        <div className="tracker tr-3"></div>
+                                        <div className="tracker tr-4"></div>
+                                        <div className="tracker tr-5"></div>
+                                        <div className="tracker tr-6"></div>
+                                        <div className="tracker tr-7"></div>
+                                        <div className="tracker tr-8"></div>
+                                        <div className="tracker tr-9"></div>
+                                        <div className="tracker tr-10"></div>
+                                        <div className="tracker tr-11"></div>
+                                        <div className="tracker tr-12"></div>
+                                        <div className="tracker tr-13"></div>
+                                        <div className="tracker tr-14"></div>
+                                        <div className="tracker tr-15"></div>
+                                        <div className="tracker tr-16"></div>
+                                        <div className="tracker tr-17"></div>
+                                        <div className="tracker tr-18"></div>
+                                        <div className="tracker tr-19"></div>
+                                        <div className="tracker tr-20"></div>
+                                        <div className="tracker tr-21"></div>
+                                        <div className="tracker tr-22"></div>
+                                        <div className="tracker tr-23"></div>
+                                        <div className="tracker tr-24"></div>
+                                        <div className="tracker tr-25"></div>
+
+                                        <div id="card" className="card card-color-3">
+                                            <img src={cat3} alt="Imagen de Neurotecnología" className="card-image" />
+                                            <p className="prompt prompt-3">Prótesis Inteligentes</p>
+                                        </div>
                                     </div>
+
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                         <div className="card-container">
-                            <div className="container noselect">
-                                <div className="canvas">
-                                    <div className="tracker tr-1"></div>
-                                    <div className="tracker tr-2"></div>
-                                    <div className="tracker tr-3"></div>
-                                    <div className="tracker tr-4"></div>
-                                    <div className="tracker tr-5"></div>
-                                    <div className="tracker tr-6"></div>
-                                    <div className="tracker tr-7"></div>
-                                    <div className="tracker tr-8"></div>
-                                    <div className="tracker tr-9"></div>
-                                    <div className="tracker tr-10"></div>
-                                    <div className="tracker tr-11"></div>
-                                    <div className="tracker tr-12"></div>
-                                    <div className="tracker tr-13"></div>
-                                    <div className="tracker tr-14"></div>
-                                    <div className="tracker tr-15"></div>
-                                    <div className="tracker tr-16"></div>
-                                    <div className="tracker tr-17"></div>
-                                    <div className="tracker tr-18"></div>
-                                    <div className="tracker tr-19"></div>
-                                    <div className="tracker tr-20"></div>
-                                    <div className="tracker tr-21"></div>
-                                    <div className="tracker tr-22"></div>
-                                    <div className="tracker tr-23"></div>
-                                    <div className="tracker tr-24"></div>
-                                    <div className="tracker tr-25"></div>
-                                    <div id="card" className="card card-color-3">
-                                        <img src={cat3} alt="Imagen de Neurotecnología" className="card-image" />
-                                        <p className="prompt prompt-3">Prótesis Inteligentes</p>
+                            <Link to="/proyectos" onClick={() => handleCategoryClick('Salud')}>
+                                <div className="container noselect">
+                                    <div className="canvas">
+                                        <div className="tracker tr-1"></div>
+                                        <div className="tracker tr-2"></div>
+                                        <div className="tracker tr-3"></div>
+                                        <div className="tracker tr-4"></div>
+                                        <div className="tracker tr-5"></div>
+                                        <div className="tracker tr-6"></div>
+                                        <div className="tracker tr-7"></div>
+                                        <div className="tracker tr-8"></div>
+                                        <div className="tracker tr-9"></div>
+                                        <div className="tracker tr-10"></div>
+                                        <div className="tracker tr-11"></div>
+                                        <div className="tracker tr-12"></div>
+                                        <div className="tracker tr-13"></div>
+                                        <div className="tracker tr-14"></div>
+                                        <div className="tracker tr-15"></div>
+                                        <div className="tracker tr-16"></div>
+                                        <div className="tracker tr-17"></div>
+                                        <div className="tracker tr-18"></div>
+                                        <div className="tracker tr-19"></div>
+                                        <div className="tracker tr-20"></div>
+                                        <div className="tracker tr-21"></div>
+                                        <div className="tracker tr-22"></div>
+                                        <div className="tracker tr-23"></div>
+                                        <div className="tracker tr-24"></div>
+                                        <div className="tracker tr-25"></div>
+
+                                        <div id="card" className="card card-color-4">
+                                            <img src={cat4} alt="Imagen de Neurotecnología" className="card-image" />
+                                            <p className="prompt prompt-4">Salud Digital</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="card-container">
-                            <div className="container noselect">
-                                <div className="canvas">
-                                    <div className="tracker tr-1"></div>
-                                    <div className="tracker tr-2"></div>
-                                    <div className="tracker tr-3"></div>
-                                    <div className="tracker tr-4"></div>
-                                    <div className="tracker tr-5"></div>
-                                    <div className="tracker tr-6"></div>
-                                    <div className="tracker tr-7"></div>
-                                    <div className="tracker tr-8"></div>
-                                    <div className="tracker tr-9"></div>
-                                    <div className="tracker tr-10"></div>
-                                    <div className="tracker tr-11"></div>
-                                    <div className="tracker tr-12"></div>
-                                    <div className="tracker tr-13"></div>
-                                    <div className="tracker tr-14"></div>
-                                    <div className="tracker tr-15"></div>
-                                    <div className="tracker tr-16"></div>
-                                    <div className="tracker tr-17"></div>
-                                    <div className="tracker tr-18"></div>
-                                    <div className="tracker tr-19"></div>
-                                    <div className="tracker tr-20"></div>
-                                    <div className="tracker tr-21"></div>
-                                    <div className="tracker tr-22"></div>
-                                    <div className="tracker tr-23"></div>
-                                    <div className="tracker tr-24"></div>
-                                    <div className="tracker tr-25"></div>
-                                    <div id="card" className="card card-color-4">
-                                        <img src={cat4} alt="Imagen de Neurotecnología" className="card-image" />
-                                        <p className="prompt prompt-4">Salud Digital</p>
-                                    </div>
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <div className="hero-container">
                         <section className="hero" style={{ transform: getTransformValue() }}>
                             <h2>¿Deseas publicar tu propio <span className="title">Proyecto?</span></h2>
@@ -198,10 +222,10 @@ const Categorias = () => {
                             </div>
                         </section>
                     </div>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <CTA />
                 </main>
                 <Footer />

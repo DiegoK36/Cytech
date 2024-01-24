@@ -6,6 +6,16 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const saltRounds = 10;
+const cors = require('cors');
+const express = require('express');
+const app = express();
+app.use(cors());
+
+app.use(cors({
+  origin: '*', // Esto permite solicitudes de cualquier origen
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados permitidos
+}));
 
 // Conexión a la base de datos MySQL
 const db = mysql.createConnection({
@@ -291,5 +301,23 @@ router.post('/cambiar-imagen/:userId', upload.single('image'), (req, res) => {
   );
 });
 
+// Cambia la ruta para coincidir con la esperada por el frontend
+router.get('/obtener-proyectos', (req, res) => {
+  const categoria = req.query.category;
+  console.log('Categoría seleccionada:', categoria);
+
+  const sql = 'SELECT * FROM proyecto WHERE categoria = ?';
+
+  db.query(sql, [categoria], (err, results) => {
+    if (err) {
+      console.error('Error al obtener proyectos:', err);
+      res.status(500).json({ error: 'Error al obtener proyectos' });
+      return;
+    }
+
+    // Enviar los proyectos como respuesta
+    res.json(results);
+  });
+});
 
 module.exports = router;
