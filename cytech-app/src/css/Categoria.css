@@ -189,35 +189,35 @@ p {
 
 /* Estilos específicos para cada color de tarjeta */
 .card-color-1 {
-    background: linear-gradient(43deg, #0a3d62 0%, #1e3799 46%, #4a69bd 100%);
+    background: linear-gradient(43deg, #002fff 0%, #00ffff 46%, #00ffff 46% 100%);
 }
 
 .card-color-1::before {
-    background: linear-gradient(43deg, #0a3d62 0%, #1e3799 46%, #4a69bd 100%);
+    background: linear-gradient(43deg, #002fff 0%, #00ffff 46%, #00ffff 46% 100%);
 }
 
 .card-color-2 {
-    background: linear-gradient(43deg, #0c2461 0%, #4a69bd 46%, #6a89cc 100%);
+    background: linear-gradient(43deg, #37ff00 0%, #ffd500 46%, #ffd500 100%);
 }
 
 .card-color-2::before {
-    background: linear-gradient(43deg, #0c2461 0%, #4a69bd 46%, #6a89cc 100%);
+    background: linear-gradient(43deg, #37ff00 0%, #ffd500 46%, #ffd500 100%);
 }
 
 .card-color-3 {
-    background: linear-gradient(43deg, #82ccdd 0%, #60a3bc 46%, #3c6382 100%);
+    background: linear-gradient(43deg, rgb(255, 0, 0) 0%, #ffd500 46%, #ffd500 100%);
 }
 
 .card-color-3::before {
-    background: linear-gradient(43deg, #82ccdd 0%, #60a3bc 46%, #3c6382 100%);
+    background: linear-gradient(43deg, rgb(255, 0, 0) 0%, #ffd500 46%, #ffd500 100%);
 }
 
 .card-color-4 {
-    background: linear-gradient(43deg, #0e6ba8 0%, #3b9cd1 46%, #6cb2eb 100%);
+    background: linear-gradient(43deg, rgb(115, 0, 255) 0%, #c800ff 46%, #c800ff 100%);
 }
 
 .card-color-4::before {
-    background: linear-gradient(43deg, #0e6ba8 0%, #3b9cd1 46%, #6cb2eb 100%);
+    background: linear-gradient(43deg, rgb(115, 0, 255) 0%, #c800ff 46%, #c800ff 100%);
 }
 
 
